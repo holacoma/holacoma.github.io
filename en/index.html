@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ezequiel Amador — Staff Engineer</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .lang-switch {
+      text-align: right;
+      margin-bottom: 40px;
+    }
+
+    .lang-switch a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid #30363d;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .lang-switch a:hover { background: #161b22; }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #f0f6fc;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #8b949e;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .badges a img { display: block; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #21262d;
+      margin: 36px 0;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #f0f6fc;
+      margin-bottom: 16px;
+    }
+
+    p { margin-bottom: 12px; color: #c9d1d9; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    th {
+      text-align: left;
+      color: #8b949e;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-bottom: 1px solid #21262d;
+    }
+
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #161b22;
+      color: #c9d1d9;
+    }
+
+    td strong { color: #f0f6fc; }
+
+    .projects { display: flex; flex-direction: column; gap: 16px; }
+
+    .project-card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+
+    .project-card h3 { color: #f0f6fc; font-size: 1rem; margin-bottom: 6px; }
+    .project-card p { color: #8b949e; font-size: 0.9rem; margin: 0; }
+
+    .stack {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      padding: 18px 20px;
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      font-size: 0.9rem;
+      color: #79c0ff;
+      line-height: 2;
+    }
+
+    blockquote {
+      border-left: 3px solid #30363d;
+      padding-left: 16px;
+      color: #8b949e;
+      font-style: italic;
+    }
+
+    .langs { display: flex; flex-direction: column; gap: 8px; }
+    .langs span { color: #c9d1d9; }
+
+    footer {
+      text-align: center;
+      color: #484f58;
+      font-size: 0.85rem;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="lang-switch">
+      <a href="/es/">🇪🇸 Español</a>
+    </div>
+
+    <h1>Hey, I'm Ezequiel 👋</h1>
+    <p class="subtitle">Staff Engineer · Full Stack · surprisingly passionate about payroll systems · Venezuelan in Santiago 🇻🇪→🇨🇱</p>
+
+    <div class="badges">
+      <a href="https://www.linkedin.com/in/ezequiel-amador-ramirez-garcia/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn">
+      </a>
+      <a href="mailto:ezeram94@gmail.com">
+        <img src="https://img.shields.io/badge/email-ezeram94%40gmail.com-grey?style=flat" alt="Email">
+      </a>
+    </div>
+
+    <hr>
+
+    <h2>About me</h2>
+    <p>8+ years writing code, leading teams, and occasionally breaking things in production on purpose — just to see what happens.</p>
+    <p>Went through Tecnosmart doing everything — Android, web, QA, tech lead, whatever was needed. Then joined Buk knowing zero Ruby and ended up as Staff Engineer. That's how I like challenges.</p>
+    <p>I have a complicated relationship with payroll calculations: I understand them well, I respect them, and sometimes I hate them.</p>
+
+    <hr>
+
+    <h2>Experience</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Role</th>
+          <th>Period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Buk</strong></td>
+          <td>Staff Engineer → Tech Lead → Developer</td>
+          <td>2019 – 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Tecnosmart</strong></td>
+          <td>Full Stack Developer</td>
+          <td>2017 – 2019</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Projects I'm proud of</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>🧮 Salary Calculator</h3>
+        <p>Binary search to find the exact net salary from gross input. Harder than it sounds.</p>
+      </div>
+      <div class="project-card">
+        <h3>📂 Outputs Module</h3>
+        <p>Core architecture for file generation and management at scale across the Buk ecosystem.</p>
+      </div>
+      <div class="project-card">
+        <h3>🇨🇴 Colombia Payroll</h3>
+        <p>Led the deprecation of the <code>colombia</code> branch into the core product, and introduced partial/bi-weekly pay stubs.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Stack</h2>
+    <div class="stack">
+      Ruby · Rails · JavaScript · Vue.js · PostgreSQL · MySQL · SQLite<br>
+      Python · Java · PHP · Django · Laravel · Android · Git · REST APIs
+    </div>
+
+    <hr>
+
+    <h2>AI-native too</h2>
+    <blockquote>
+      I use Claude from the terminal, understand how LLMs work under the hood (Skills, memory, context), and follow a structured Do's &amp; Don'ts prompting methodology. AI isn't magic — it's a tool, and you need to know how to use it properly.
+    </blockquote>
+
+    <hr>
+
+    <h2>Languages</h2>
+    <div class="langs">
+      <span>🇪🇸 Español — native</span>
+      <span>🇬🇧 English — intermediate</span>
+    </div>
+
+    <footer>
+      📬 ezeram94@gmail.com · Santiago, Chile
+    </footer>
+
+  </div>
+</body>
+</html>

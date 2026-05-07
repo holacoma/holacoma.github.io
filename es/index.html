@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ezequiel Amador — Staff Engineer</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .lang-switch {
+      text-align: right;
+      margin-bottom: 40px;
+    }
+
+    .lang-switch a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid #30363d;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .lang-switch a:hover { background: #161b22; }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #f0f6fc;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #8b949e;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .badges a img { display: block; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #21262d;
+      margin: 36px 0;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #f0f6fc;
+      margin-bottom: 16px;
+    }
+
+    p { margin-bottom: 12px; color: #c9d1d9; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    th {
+      text-align: left;
+      color: #8b949e;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-bottom: 1px solid #21262d;
+    }
+
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #161b22;
+      color: #c9d1d9;
+    }
+
+    td strong { color: #f0f6fc; }
+
+    .projects { display: flex; flex-direction: column; gap: 16px; }
+
+    .project-card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+
+    .project-card h3 { color: #f0f6fc; font-size: 1rem; margin-bottom: 6px; }
+    .project-card p { color: #8b949e; font-size: 0.9rem; margin: 0; }
+
+    .stack {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      padding: 18px 20px;
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      font-size: 0.9rem;
+      color: #79c0ff;
+      line-height: 2;
+    }
+
+    blockquote {
+      border-left: 3px solid #30363d;
+      padding-left: 16px;
+      color: #8b949e;
+      font-style: italic;
+    }
+
+    .langs { display: flex; flex-direction: column; gap: 8px; }
+    .langs span { color: #c9d1d9; }
+
+    footer {
+      text-align: center;
+      color: #484f58;
+      font-size: 0.85rem;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="lang-switch">
+      <a href="/en/">🇬🇧 English</a>
+    </div>
+
+    <h1>Hola, soy Ezequiel 👋</h1>
+    <p class="subtitle">Staff Engineer · Full Stack · amante del dominio de remuneraciones (sí, en serio) · venezolano en Santiago 🇻🇪→🇨🇱</p>
+
+    <div class="badges">
+      <a href="https://www.linkedin.com/in/ezequiel-amador-ramirez-garcia/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn">
+      </a>
+      <a href="mailto:ezeram94@gmail.com">
+        <img src="https://img.shields.io/badge/email-ezeram94%40gmail.com-grey?style=flat" alt="Email">
+      </a>
+    </div>
+
+    <hr>
+
+    <h2>Sobre mí</h2>
+    <p>Llevo 8+ años escribiendo código, liderando equipos y, de vez en cuando, rompiendo cosas en producción a propósito para ver qué pasa.</p>
+    <p>Pasé por Tecnosmart haciendo de todo — Android, web, QA, líder, lo que tocara. Después llegué a Buk sin saber nada de Ruby y terminé siendo Staff Engineer. Así me gustan los desafíos.</p>
+    <p>Tengo una relación complicada con las liquidaciones de sueldo: las entiendo bien, las respeto, y a veces las odio.</p>
+
+    <hr>
+
+    <h2>Experiencia</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Empresa</th>
+          <th>Rol</th>
+          <th>Período</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Buk</strong></td>
+          <td>Staff Engineer → Líder Técnico → Developer</td>
+          <td>2019 – 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Tecnosmart</strong></td>
+          <td>Full Stack Developer</td>
+          <td>2017 – 2019</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Proyectos de los que estoy orgulloso</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>🧮 Calculadora de Sueldos</h3>
+        <p>Búsqueda binaria para calcular el sueldo líquido exacto a partir del bruto. Más difícil de lo que suena.</p>
+      </div>
+      <div class="project-card">
+        <h3>📂 Módulo Outputs</h3>
+        <p>Arquitectura base para generación y gestión de archivos a escala en el ecosistema Buk.</p>
+      </div>
+      <div class="project-card">
+        <h3>🇨🇴 Remuneraciones Colombia</h3>
+        <p>Lideré la eliminación de la rama <code>colombia</code> consolidándola al core del producto, e implementé comprobantes parciales/quincenales.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Stack</h2>
+    <div class="stack">
+      Ruby · Rails · JavaScript · Vue.js · PostgreSQL · MySQL · SQLite<br>
+      Python · Java · PHP · Django · Laravel · Android · Git · REST APIs
+    </div>
+
+    <hr>
+
+    <h2>Con IA también</h2>
+    <blockquote>
+      Uso Claude desde la terminal, entiendo cómo funcionan los LLMs por dentro (Skills, memoria, contexto), y sigo una metodología de prompting estructurada en Do's &amp; Don'ts. La IA no es magia, es una herramienta — y hay que saber usarla bien.
+    </blockquote>
+
+    <hr>
+
+    <h2>Idiomas</h2>
+    <div class="langs">
+      <span>🇪🇸 Español — nativo</span>
+      <span>🇬🇧 English — intermedio</span>
+    </div>
+
+    <footer>
+      📬 ezeram94@gmail.com · Santiago, Chile
+    </footer>
+
+  </div>
+</body>
+</html>
