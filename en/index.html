@@ -1,235 +1,426 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ezequiel Amador, Staff Engineer</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Ezequiel Amador, Staff Engineer</title>
+    <meta name="description" content="Staff Engineer with 8+ years of experience building full stack software, focused on complex systems and high-impact architecture." />
+    <meta name="author" content="Ezequiel Amador" />
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0d1117;
-      color: #c9d1d9;
-      line-height: 1.7;
-    }
+    <!-- Inter + JetBrains Mono web fonts from bunny.net (GDPR compliant) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 60px 24px;
-    }
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
-    .lang-switch {
-      text-align: right;
-      margin-bottom: 40px;
-    }
+    <!-- Tailwind CSS v4 Configuration -->
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+      @theme {
+        --default-font-family: "Inter";
+        --font-mono: "JetBrains Mono", ui-monospace, monospace;
+        --color-cream-50: oklch(0.983 0.003 89);
+        --color-cream-100: oklch(0.974 0.004 89);
+        --color-cream-200: oklch(0.948 0.006 90);
+        --color-cream-300: oklch(0.918 0.005 90);
+        --color-cream-400: oklch(0.835 0.008 89);
+        --color-cream-500: oklch(0.677 0.009 89);
+        --color-cream-600: oklch(0.553 0.010 89);
+        --color-cream-700: oklch(0.408 0.007 89);
+        --color-cream-800: oklch(0.288 0.008 89);
+        --color-cream-900: oklch(0.205 0.007 89);
+        --color-cream-950: oklch(0.155 0.005 89);
+        --color-brand-50: oklch(0.971 0.014 55);
+        --color-brand-100: oklch(0.929 0.038 60);
+        --color-brand-200: oklch(0.864 0.083 55);
+        --color-brand-300: oklch(0.789 0.142 51);
+        --color-brand-400: oklch(0.704 0.187 43);
+        --color-brand-500: oklch(0.636 0.225 36);
+        --color-brand-600: oklch(0.563 0.193 36);
+        --color-brand-700: oklch(0.470 0.158 38);
+        --color-brand-800: oklch(0.372 0.124 39);
+        --color-brand-900: oklch(0.281 0.092 39);
+        --color-brand-950: oklch(0.183 0.061 41);
+        --color-peach: oklch(0.769 0.064 41);
+        --color-mint: oklch(0.786 0.063 144);
+        --color-azure: oklch(0.766 0.062 246);
+        --color-lavender: oklch(0.738 0.072 297);
+        --color-gold: oklch(0.633 0.111 65);
+      }
+    </style>
 
-    .lang-switch a {
-      color: #58a6ff;
-      text-decoration: none;
-      font-size: 14px;
-      border: 1px solid #30363d;
-      padding: 4px 12px;
-      border-radius: 20px;
-    }
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>[x-cloak] { display: none !important; }</style>
+  </head>
+  <body>
+    <!-- Page Container -->
+    <div
+      x-data="{
+        darkMode: false,
+        toggleDarkMode() {
+          this.darkMode = !this.darkMode;
+          if (this.darkMode) {
+            document.body.parentNode.classList.add('dark');
+          } else {
+            document.body.parentNode.classList.remove('dark');
+          }
+        }
+      }"
+      class="min-h-dvh min-w-[320px] bg-cream-100 text-cream-900 dark:bg-cream-950 dark:text-cream-200"
+    >
+      <!-- Top Nav -->
+      <header class="border-b border-cream-300 dark:border-white/10">
+        <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:px-10">
+          <!-- Wordmark -->
+          <a href="javascript:void(0)" class="inline-flex items-baseline gap-1 font-medium tracking-tight">
+            ezequiel.
+          </a>
 
-    .lang-switch a:hover { background: #161b22; }
+          <!-- Right side: nav + actions -->
+          <div class="flex items-center gap-2 sm:gap-5">
+            <nav class="hidden items-center gap-6 md:flex">
+              <a href="#about" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">About</a>
+              <a href="#experience" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Experience</a>
+              <a href="#projects" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Projects</a>
+              <a href="#contact" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Contact</a>
+            </nav>
 
-    h1 {
-      font-size: 2.2rem;
-      color: #f0f6fc;
-      margin-bottom: 6px;
-    }
+            <!-- Language switcher -->
+            <a href="/es/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">🇪🇸 ES</a>
 
-    .subtitle {
-      color: #8b949e;
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
+            <!-- Toggle Dark Mode -->
+            <button
+              x-on:click="toggleDarkMode()"
+              type="button"
+              class="inline-flex size-9 items-center justify-center rounded-md text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white"
+              aria-label="Toggle theme"
+            >
+              <svg x-show="!darkMode" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2" /><path d="M12 20v2" />
+                <path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" />
+                <path d="M2 12h2" /><path d="M20 12h2" />
+                <path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" />
+              </svg>
+              <svg x-show="darkMode" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+              </svg>
+            </button>
 
-    .badges {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
+            <!-- Download CV -->
+            <a
+              href="/assets/cv.pdf"
+              class="inline-flex h-11 items-center gap-2 rounded-md bg-cream-900 px-5 text-sm font-medium text-cream-100 hover:bg-cream-800 dark:bg-white dark:text-cream-950 dark:hover:bg-white/90"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" x2="12" y1="15" y2="3" />
+              </svg>
+              <span class="hidden sm:inline">Download CV</span>
+              <span class="sm:hidden">CV</span>
+            </a>
+          </div>
+        </div>
+      </header>
+      <!-- END Top Nav -->
 
-    .badges a img { display: block; }
+      <main class="mx-auto max-w-6xl px-5 lg:px-10">
+        <!-- Hero -->
+        <section class="border-b border-cream-300 py-20 dark:border-white/10">
+          <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <!-- Left: identity -->
+            <div class="lg:col-span-7">
+              <span class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">
+                <span class="size-1.5 rounded-full bg-brand-500"></span>
+                Staff Engineer · Santiago, Chile 🇻🇪→🇨🇱
+              </span>
+              <h1 class="mt-6 text-4xl font-normal leading-[1.05] tracking-[-0.03em] sm:text-5xl md:text-6xl lg:text-7xl">
+                Ezequiel<span class="text-brand-500">.</span>
+              </h1>
+              <p class="mt-6 max-w-xl text-base/relaxed text-cream-700 dark:text-cream-500">
+                8+ years building full stack software, focused on complex systems and high-impact architecture. Grew from Developer to Engineering Manager and currently Staff Engineer at Buk.
+              </p>
 
-    hr {
-      border: none;
-      border-top: 1px solid #21262d;
-      margin: 36px 0;
-    }
+              <!-- CTAs -->
+              <div class="mt-8 flex flex-wrap items-center gap-3">
+                <a href="#contact" class="inline-flex h-10 items-center gap-2 rounded-md bg-brand-500 px-5 text-sm font-medium text-white hover:bg-brand-600">
+                  Get in touch
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4">
+                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+                <a href="#experience" class="inline-flex h-10 items-center gap-2 rounded-md border border-cream-400 bg-white px-5 text-sm font-medium text-cream-900 hover:bg-cream-50 dark:border-white/15 dark:bg-transparent dark:text-white dark:hover:bg-white/5">
+                  View experience
+                </a>
+              </div>
+              <!-- END CTAs -->
 
-    h2 {
-      font-size: 1.2rem;
-      color: #f0f6fc;
-      margin-bottom: 16px;
-    }
+              <!-- Stat strip -->
+              <dl class="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-cream-300 pt-8 dark:border-white/10">
+                <div>
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Years</dt>
+                  <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">8+</dd>
+                </div>
+                <div>
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Projects</dt>
+                  <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">3</dd>
+                </div>
+                <div>
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Companies</dt>
+                  <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">2</dd>
+                </div>
+              </dl>
+              <!-- END Stat strip -->
+            </div>
+            <!-- END Left: identity -->
 
-    p { margin-bottom: 12px; color: #c9d1d9; }
+            <!-- Right: portrait -->
+            <div class="lg:col-span-5">
+              <div class="relative overflow-hidden rounded-xl border border-cream-300 bg-white dark:border-white/10 dark:bg-white/5">
+                <!-- To add your photo: replace the div below with:
+                     <img src="../assets/avatar.jpg" class="aspect-4/5 w-full object-cover" alt="Ezequiel portrait" /> -->
+                <div class="aspect-4/5 w-full flex items-center justify-center bg-gradient-to-br from-brand-100 to-cream-200 dark:from-brand-950 dark:to-cream-900">
+                  <span class="select-none text-[5rem] font-light tracking-tight text-brand-400/60 dark:text-brand-500/40">EA</span>
+                </div>
+                <div class="absolute top-4 left-4 right-4 flex justify-between">
+                  <span class="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 backdrop-blur dark:bg-cream-950/80 dark:text-cream-100">
+                    <span class="size-1.5 rounded-full bg-mint"></span>
+                    Online
+                  </span>
+                  <span class="rounded-full bg-white/80 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 backdrop-blur dark:bg-cream-950/80 dark:text-cream-100">
+                    Est. 2017
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- END Right: portrait -->
+          </div>
+        </section>
+        <!-- END Hero -->
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
+        <!-- About -->
+        <section id="about" class="border-b border-cream-300 py-20 dark:border-white/10">
+          <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">01 · About</span>
+              <h2 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">Complex systems, calm code.</h2>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Deep expertise in payroll and compensation from both a technical and functional perspective. I build high-precision solutions in a domain where rounding errors cost real money.
+              </p>
+            </div>
 
-    th {
-      text-align: left;
-      color: #8b949e;
-      font-weight: 600;
-      padding: 8px 12px;
-      border-bottom: 1px solid #21262d;
-    }
+            <div class="min-w-0 lg:col-span-8">
+              <!-- Code block -->
+              <div class="overflow-hidden rounded-xl border border-cream-300 bg-white dark:border-white/10 dark:bg-white/5">
+                <div class="flex items-center gap-2 border-b border-cream-300 px-4 py-3 dark:border-white/10">
+                  <span class="size-2.5 rounded-full bg-peach"></span>
+                  <span class="size-2.5 rounded-full bg-gold"></span>
+                  <span class="size-2.5 rounded-full bg-mint"></span>
+                  <span class="ml-3 font-mono text-xs text-cream-600 dark:text-cream-500">~/about/ezequiel.rb</span>
+                </div>
+                <pre class="overflow-x-auto px-5 py-5 font-mono text-[13px] leading-relaxed text-cream-900 dark:text-cream-200"><span class="text-cream-600 dark:text-cream-500"># stack</span>
+<span class="text-gold">stack</span> = {
+  languages: [<span class="text-mint">"Ruby"</span>, <span class="text-mint">"Python"</span>, <span class="text-mint">"JavaScript"</span>, <span class="text-mint">"Java"</span>],
+  frontend:  [<span class="text-mint">"Vue.js"</span>, <span class="text-mint">"Hotwire"</span>],
+  backend:   [<span class="text-mint">"Rails"</span>, <span class="text-mint">"PostgreSQL"</span>, <span class="text-mint">"MySQL"</span>],
+  tooling:   [<span class="text-mint">"Git"</span>, <span class="text-mint">"Docker"</span>, <span class="text-mint">"REST APIs"</span>],
+}</pre>
+              </div>
+              <!-- END Code block -->
 
-    td {
-      padding: 10px 12px;
-      border-bottom: 1px solid #161b22;
-      color: #c9d1d9;
-    }
+              <!-- Skill pills -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-peach/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Architecture</span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-mint/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Payroll</span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">APIs</span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">AI-native</span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-gold/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Full Stack</span>
+              </div>
+              <!-- END Skill pills -->
 
-    td strong { color: #f0f6fc; }
+              <!-- AI-native note -->
+              <blockquote class="mt-6 border-l-2 border-brand-500 pl-5 text-sm/relaxed italic text-cream-700 dark:text-cream-500">
+                "I use Claude from the terminal, understand how LLMs work under the hood (Skills, memory, context), and follow a structured Do's &amp; Don'ts prompting methodology. AI isn't magic. It's a tool, and you need to know how to use it properly."
+              </blockquote>
+              <!-- END AI-native note -->
+            </div>
+          </div>
+        </section>
+        <!-- END About -->
 
-    .projects { display: flex; flex-direction: column; gap: 16px; }
+        <!-- Experience -->
+        <section id="experience" class="border-b border-cream-300 py-20 dark:border-white/10">
+          <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">02 · Experience</span>
+              <h2 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">From dev to staff.</h2>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Eight years spanning startup and scale-up roles, leading teams and building payroll infrastructure for thousands of companies across Latin America.
+              </p>
+            </div>
 
-    .project-card {
-      background: #161b22;
-      border: 1px solid #21262d;
-      border-radius: 8px;
-      padding: 18px 20px;
-    }
+            <ul class="space-y-3 lg:col-span-8">
+              <li class="rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+                <div class="flex flex-wrap items-baseline justify-between gap-3">
+                  <h3 class="text-[1.375rem] font-normal leading-snug tracking-tight">Developer → Tech Lead → Staff Engineer</h3>
+                  <span class="font-mono text-xs text-cream-600 dark:text-cream-500">2019 – 2025</span>
+                </div>
+                <p class="mt-1 text-sm font-medium text-brand-500">Buk</p>
+                <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                  Led the Colombia Payroll team, driving key architecture initiatives and delivering high-impact features used by thousands of companies across Latin America. Grew through every engineering level up to Staff Engineer.
+                </p>
+              </li>
 
-    .project-card h3 { color: #f0f6fc; font-size: 1rem; margin-bottom: 6px; }
-    .project-card p { color: #8b949e; font-size: 0.9rem; margin: 0; }
+              <li class="rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+                <div class="flex flex-wrap items-baseline justify-between gap-3">
+                  <h3 class="text-[1.375rem] font-normal leading-snug tracking-tight">Full Stack Developer</h3>
+                  <span class="font-mono text-xs text-cream-600 dark:text-cream-500">2017 – 2019</span>
+                </div>
+                <p class="mt-1 text-sm font-medium text-brand-500">Tecnosmart</p>
+                <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                  Covered various technical roles across projects in different industries, building a solid foundation across the full web stack.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- END Experience -->
 
-    .stack {
-      background: #161b22;
-      border: 1px solid #21262d;
-      border-radius: 8px;
-      padding: 18px 20px;
-      font-family: 'SFMono-Regular', Consolas, monospace;
-      font-size: 0.9rem;
-      color: #79c0ff;
-      line-height: 2;
-    }
+        <!-- Projects -->
+        <section id="projects" class="border-b border-cream-300 py-20 dark:border-white/10">
+          <div class="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">03 · Projects</span>
+              <h2 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">Selected work.</h2>
+            </div>
+          </div>
 
-    blockquote {
-      border-left: 3px solid #30363d;
-      padding-left: 16px;
-      color: #8b949e;
-      font-style: italic;
-    }
+          <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <!-- Project 1 -->
+            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-mint/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Ruby · Rails</span>
+                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">01</span>
+              </div>
+              <h3 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Salary Calculator</h3>
+              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Binary search to find the exact net salary from gross input. Harder than it sounds when you factor in progressive tax brackets and Chilean labor law.
+              </p>
+            </article>
 
-    .langs { display: flex; flex-direction: column; gap: 8px; }
-    .langs span { color: #c9d1d9; }
+            <!-- Project 2 -->
+            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Architecture</span>
+                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">02</span>
+              </div>
+              <h3 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Outputs Module</h3>
+              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Core architecture for file generation and management at scale across the Buk ecosystem. Built to handle thousands of documents per payroll run.
+              </p>
+            </article>
 
-    footer {
-      text-align: center;
-      color: #484f58;
-      font-size: 0.85rem;
-      margin-top: 60px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
+            <!-- Project 3 -->
+            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Payroll · Migration</span>
+                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">03</span>
+              </div>
+              <h3 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Colombia Payroll</h3>
+              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Led the deprecation of the <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">colombia</code> branch into the core product, and introduced partial and bi-weekly pay stubs.
+              </p>
+            </article>
+          </div>
+        </section>
+        <!-- END Projects -->
 
-    <div class="lang-switch">
-      <a href="/es/">🇪🇸 Español</a>
+        <!-- Contact -->
+        <section id="contact" class="py-20">
+          <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">04 · Contact</span>
+              <h2 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">Let's build something complex together.</h2>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Open to new opportunities. Usually reply within a day.
+              </p>
+              <a href="mailto:ezeram94@gmail.com" class="mt-6 inline-flex h-10 items-center gap-2 rounded-md bg-brand-500 px-5 text-sm font-medium text-white hover:bg-brand-600">
+                ezeram94@gmail.com
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4">
+                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="lg:col-span-8">
+              <!-- Contact details -->
+              <dl class="grid grid-cols-1 divide-y divide-cream-300 rounded-xl border border-cream-300 bg-white sm:grid-cols-2 sm:divide-y-0 sm:divide-x dark:divide-white/10 dark:border-white/10 dark:bg-white/5">
+                <div class="p-6">
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Location</dt>
+                  <dd class="mt-2 font-medium">Santiago, Chile 🇻🇪→🇨🇱</dd>
+                </div>
+                <div class="p-6">
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Languages</dt>
+                  <dd class="mt-2 font-medium">Español (native) · English (intermediate)</dd>
+                </div>
+                <div class="border-t border-cream-300 p-6 dark:border-white/10">
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Email</dt>
+                  <dd class="mt-2">
+                    <a href="mailto:ezeram94@gmail.com" class="font-mono text-sm text-cream-900 underline decoration-cream-400 underline-offset-4 hover:decoration-cream-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white">
+                      ezeram94@gmail.com
+                    </a>
+                  </dd>
+                </div>
+                <div class="border-t border-cream-300 p-6 dark:border-white/10">
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Interests</dt>
+                  <dd class="mt-2 font-medium">Climbing · Gaming · Coffee</dd>
+                </div>
+              </dl>
+
+              <!-- Social links -->
+              <ul class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <li>
+                  <a href="https://www.linkedin.com/in/ezequiel-amador-ramirez-garcia/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+                    <div>
+                      <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">LinkedIn</span>
+                      <p class="mt-1 text-sm font-medium">Professional profile</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-cream-600 dark:text-cream-500">
+                      <path d="M7 7h10v10" /><path d="M7 17 17 7" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:ezeram94@gmail.com" class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+                    <div>
+                      <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Email</span>
+                      <p class="mt-1 text-sm font-medium">ezeram94@gmail.com</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-cream-600 dark:text-cream-500">
+                      <path d="M7 7h10v10" /><path d="M7 17 17 7" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <!-- END Social links -->
+            </div>
+          </div>
+        </section>
+        <!-- END Contact -->
+      </main>
+
+      <!-- Footer -->
+      <footer class="border-t border-cream-300 dark:border-white/10">
+        <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-3 px-5 py-8 text-sm text-cream-700 sm:flex-row sm:items-center lg:px-10 dark:text-cream-500">
+          <p>Resume &copy; <script>document.write(new Date().getFullYear());</script> · Ezequiel Amador</p>
+          <a href="/es/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">🇪🇸 Ver en Español</a>
+        </div>
+      </footer>
+      <!-- END Footer -->
     </div>
-
-    <h1>Hey, I'm Ezequiel 👋</h1>
-    <p class="subtitle">Staff Engineer · Full Stack · gamer · climber · coffee · Venezuelan in Santiago 🇻🇪→🇨🇱</p>
-
-    <div class="badges">
-      <a href="https://www.linkedin.com/in/ezequiel-amador-ramirez-garcia/" target="_blank">
-        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn">
-      </a>
-      <a href="mailto:ezeram94@gmail.com">
-        <img src="https://img.shields.io/badge/email-ezeram94%40gmail.com-grey?style=flat" alt="Email">
-      </a>
-    </div>
-
-    <hr>
-
-    <h2>About me</h2>
-    <p>8+ years building full stack software, focused on complex systems and high-impact architecture. Grew from Developer to Engineering Manager and currently Staff Engineer at Buk.</p>
-    <p>At Buk I led the Colombia Payroll team, driving key architecture initiatives and delivering high-impact features used by thousands of companies across Latin America. Before that, at Tecnosmart, I covered various technical roles across projects in different industries.</p>
-    <p>I have deep expertise in the payroll and compensation domain, from both a technical and functional perspective — a complex area I know well and where I've built high-precision solutions.</p>
-
-    <hr>
-
-    <h2>Experience</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Company</th>
-          <th>Role</th>
-          <th>Period</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Buk</strong></td>
-          <td>Developer → Tech Lead → Staff Engineer</td>
-          <td>2019 – 2025</td>
-        </tr>
-        <tr>
-          <td><strong>Tecnosmart</strong></td>
-          <td>Full Stack Developer</td>
-          <td>2017 – 2019</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <hr>
-
-    <h2>Projects I'm proud of</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>🧮 Salary Calculator</h3>
-        <p>Binary search to find the exact net salary from gross input. Harder than it sounds.</p>
-      </div>
-      <div class="project-card">
-        <h3>📂 Outputs Module</h3>
-        <p>Core architecture for file generation and management at scale across the Buk ecosystem.</p>
-      </div>
-      <div class="project-card">
-        <h3>🇨🇴 Colombia Payroll</h3>
-        <p>Led the deprecation of the <code>colombia</code> branch into the core product, and introduced partial/bi-weekly pay stubs.</p>
-      </div>
-    </div>
-
-    <hr>
-
-    <h2>Stack</h2>
-    <div class="stack">
-      Ruby · Rails · JavaScript · Vue.js · PostgreSQL · MySQL · SQLite<br>
-      Python · Java · PHP · Django · Laravel · Android · Git · REST APIs
-    </div>
-
-    <hr>
-
-    <h2>AI-native too</h2>
-    <blockquote>
-      I use Claude from the terminal, understand how LLMs work under the hood (Skills, memory, context), and follow a structured Do's &amp; Don'ts prompting methodology. AI isn't magic. It's a tool, and you need to know how to use it properly.
-    </blockquote>
-
-    <hr>
-
-    <h2>Languages</h2>
-    <div class="langs">
-      <span>🇪🇸 Español (native)</span>
-      <span>🇬🇧 English (intermediate)</span>
-    </div>
-
-    <footer>
-      📬 ezeram94@gmail.com · Santiago, Chile
-    </footer>
-
-  </div>
-</body>
+    <!-- END Page Container -->
+  </body>
 </html>
