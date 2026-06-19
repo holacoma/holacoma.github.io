@@ -184,13 +184,8 @@
                 x-data="{
                   slide: 0,
                   imgs: [
-                    '/assets/portraits/1.png',
-                    '/assets/portraits/2.png',
-                    '/assets/portraits/3.png',
-                    '/assets/portraits/4.png',
-                    '/assets/portraits/5.png',
-                    '/assets/portraits/6.webp',
-                    '/assets/portraits/7.webp'
+                    '/assets/portraits/front.png',
+                    '/assets/portraits/side.png'
                   ],
                   next() { this.slide = (this.slide + 1) % this.imgs.length },
                   prev() { this.slide = (this.slide - 1 + this.imgs.length) % this.imgs.length }
