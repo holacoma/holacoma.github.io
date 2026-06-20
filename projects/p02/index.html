@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Contact — Ezequiel Amador</title>
-    <meta name="description" content="Open to new opportunities. Staff Engineer based in Santiago, Chile. Usually replies within a day." />
+    <title>Outputs Module — Ezequiel Amador</title>
+    <meta name="description" content="Core architecture for file generation and management at scale across the Buk ecosystem." />
     <meta name="author" content="Ezequiel Amador" />
 
     <link rel="preconnect" href="https://fonts.bunny.net" />
@@ -79,28 +79,19 @@
       <header class="border-b border-cream-300 dark:border-white/10">
         <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:px-10">
           <a href="/" class="inline-flex items-baseline gap-1 font-medium tracking-tight">ezequiel.</a>
-
           <div class="flex items-center gap-2 sm:gap-5">
             <nav class="hidden items-center gap-6 md:flex">
-              <a href="/" :class="nc('/')" x-text="$store.i18n.t('nav.home')">Home</a>
               <a href="/about/" :class="nc('/about/')" x-text="$store.i18n.t('nav.about')">About</a>
               <a href="/experience/" :class="nc('/experience/')" x-text="$store.i18n.t('nav.experience')">Experience</a>
               <a href="/projects/" :class="nc('/projects/')" x-text="$store.i18n.t('nav.projects')">Projects</a>
               <a href="/education/" :class="nc('/education/')" x-text="$store.i18n.t('nav.education')">Education</a>
               <a href="/contact/" :class="nc('/contact/')" x-text="$store.i18n.t('nav.contact')">Contact</a>
             </nav>
-
             <button x-on:click="$store.i18n.set($store.i18n.lang === 'en' ? 'es' : 'en')" x-text="$store.i18n.t('nav.lang_toggle')" type="button" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">🇪🇸 ES</button>
-
             <button x-on:click="toggleDarkMode()" type="button" class="inline-flex size-9 items-center justify-center rounded-md text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white" aria-label="Toggle theme">
-              <svg x-show="!darkMode" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5">
-                <circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" />
-              </svg>
-              <svg x-show="darkMode" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5">
-                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-              </svg>
+              <svg x-show="!darkMode" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
+              <svg x-show="darkMode" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
             </button>
-
             <a :href="$store.i18n.t('nav.cv_path')" class="inline-flex h-11 items-center gap-2 rounded-md bg-cream-900 px-5 text-sm font-medium text-cream-100 hover:bg-cream-800 dark:bg-white dark:text-cream-950 dark:hover:bg-white/90">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
               <span class="hidden sm:inline" x-text="$store.i18n.t('nav.download_cv')">Download CV</span>
@@ -109,78 +100,71 @@
           </div>
         </div>
       </header>
-      <!-- END Top Nav -->
 
       <main id="swup" class="mx-auto max-w-6xl px-5 lg:px-10">
-        <!-- Contact -->
-        <section class="py-20">
-          <div class="grid gap-12 lg:grid-cols-12">
-            <div class="lg:col-span-4">
-              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.section')">Contact</span>
-              <h1 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl" x-text="$store.i18n.t('contact.heading')">Let's build something complex together.</h1>
-              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('contact.description')">
-                Open to new opportunities. Usually reply within a day.
-              </p>
-              <a href="mailto:ezeram94@gmail.com" class="mt-6 inline-flex h-10 items-center gap-2 rounded-md bg-brand-500 px-5 text-sm font-medium text-white hover:bg-brand-600">
-                ezeram94@gmail.com
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-              </a>
+        <div class="py-20">
+          <a href="/projects/" class="inline-flex items-center gap-1.5 text-sm font-medium text-cream-600 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="m15 18-6-6 6-6"/></svg>
+            <span x-text="$store.i18n.t('projects.detail_back')">← Projects</span>
+          </a>
+          <div class="mt-8">
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-sm text-cream-500 dark:text-cream-600">02</span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Architecture</span>
             </div>
-
-            <div class="lg:col-span-8">
-              <!-- Contact details -->
-              <dl class="grid grid-cols-1 divide-y divide-cream-300 rounded-xl border border-cream-300 bg-white sm:grid-cols-2 sm:divide-y-0 sm:divide-x dark:divide-white/10 dark:border-white/10 dark:bg-white/5">
-                <div class="p-6">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.loc_label')">Location</dt>
-                  <dd class="mt-2 font-medium" x-text="$store.i18n.t('contact.loc_value')">Santiago, Chile 🇻🇪→🇨🇱</dd>
-                </div>
-                <div class="p-6">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.lang_label')">Languages</dt>
-                  <dd class="mt-2 font-medium" x-text="$store.i18n.t('contact.lang_value')">Español (native) · English (advanced)</dd>
-                </div>
-                <div class="border-t border-cream-300 p-6 dark:border-white/10">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.email_label')">Email</dt>
-                  <dd class="mt-2">
-                    <a href="mailto:ezeram94@gmail.com" class="font-mono text-sm text-cream-900 underline decoration-cream-400 underline-offset-4 hover:decoration-cream-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white">
-                      ezeram94@gmail.com
-                    </a>
-                  </dd>
-                </div>
-                <div class="border-t border-cream-300 p-6 dark:border-white/10">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.interests_label')">Interests</dt>
-                  <dd class="mt-2 font-medium" x-text="$store.i18n.t('contact.interests_value')">Climbing · Gaming · Coffee</dd>
-                </div>
-              </dl>
-
-              <!-- Social links -->
-              <ul class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <li>
-                  <a href="https://www.linkedin.com/in/ezequiel-amador-ramirez-garcia/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
-                    <div>
-                      <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.linkedin_label')">LinkedIn</span>
-                      <p class="mt-1 text-sm font-medium" x-text="$store.i18n.t('contact.linkedin_profile')">Professional profile</p>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-cream-600 dark:text-cream-500"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:ezeram94@gmail.com" class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
-                    <div>
-                      <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.email_label')">Email</span>
-                      <p class="mt-1 text-sm font-medium">ezeram94@gmail.com</p>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-cream-600 dark:text-cream-500"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
-                  </a>
-                </li>
-              </ul>
-              <!-- END Social links -->
+            <h1 class="mt-4 text-3xl font-normal leading-tight tracking-tight md:text-4xl" x-text="$store.i18n.t('projects.p02_title')">Outputs Module</h1>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-6 border-b border-cream-200 pb-8 dark:border-white/10">
+            <div class="flex flex-col gap-0.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-500 dark:text-cream-600" x-text="$store.i18n.t('projects.detail_role')">Role</span>
+              <span class="text-sm font-medium text-cream-800 dark:text-cream-300" x-text="$store.i18n.t('projects.p02_role')"></span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-500 dark:text-cream-600" x-text="$store.i18n.t('projects.detail_team')">Team</span>
+              <span class="text-sm font-medium text-cream-800 dark:text-cream-300" x-text="$store.i18n.t('projects.p02_team')"></span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-500 dark:text-cream-600" x-text="$store.i18n.t('projects.detail_duration')">Duration</span>
+              <span class="text-sm font-medium text-cream-800 dark:text-cream-300" x-text="$store.i18n.t('projects.p02_duration')"></span>
             </div>
           </div>
-        </section>
-        <!-- END Contact -->
+          <div class="mt-12 grid gap-12 lg:grid-cols-12">
+            <div class="space-y-10 lg:col-span-8">
+              <p class="text-base/relaxed text-cream-700 dark:text-cream-400" x-text="$store.i18n.t('projects.p02_desc')"></p>
+              <div>
+                <h2 class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('projects.detail_impact')">Impact</h2>
+                <ul class="mt-4 space-y-2" x-data="{ items: $store.i18n.t('projects.p02_impact').split('|') }">
+                  <template x-for="item in items" :key="item">
+                    <li class="flex gap-3 text-sm/relaxed text-cream-700 dark:text-cream-400">
+                      <span class="mt-[0.45rem] size-1.5 shrink-0 rounded-full bg-brand-400"></span>
+                      <span x-text="item"></span>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+              <div>
+                <h2 class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('projects.detail_approach')">How I did it</h2>
+                <p class="mt-4 text-sm/relaxed text-cream-700 dark:text-cream-400" x-html="$store.i18n.t('projects.p02_approach')"></p>
+              </div>
+              <div>
+                <h2 class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('projects.detail_challenges')">Technical challenges</h2>
+                <p class="mt-4 text-sm/relaxed text-cream-700 dark:text-cream-400" x-html="$store.i18n.t('projects.p02_challenges')"></p>
+              </div>
+            </div>
+            <div class="space-y-8 lg:col-span-4">
+              <div>
+                <h2 class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('projects.detail_stack')">Full tech stack</h2>
+                <div class="mt-4 flex flex-wrap gap-2" x-data="{ tags: $store.i18n.t('projects.p02_stack').split('|') }">
+                  <template x-for="tag in tags" :key="tag">
+                    <span class="inline-flex items-center rounded-full bg-cream-200 px-2.5 py-1 text-xs font-medium text-cream-800 dark:bg-white/10 dark:text-cream-300" x-text="tag"></span>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
-      <!-- Footer -->
       <footer class="border-t border-cream-300 dark:border-white/10">
         <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-cream-700 sm:flex-row sm:items-center sm:justify-between lg:px-10 dark:text-cream-500">
           <p><span x-text="$store.i18n.t('footer.resume')">Resume</span> &copy; <script>document.write(new Date().getFullYear());</script> · Ezequiel Amador</p>
@@ -194,7 +178,6 @@
           <button x-on:click="$store.i18n.set($store.i18n.lang === 'en' ? 'es' : 'en')" x-text="$store.i18n.t('footer.lang_switch')" type="button" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">🇪🇸 Ver en Español</button>
         </div>
       </footer>
-      <!-- END Footer -->
     </div>
     <script src="/assets/js/swup.min.js"></script>
     <script>

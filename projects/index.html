@@ -82,6 +82,7 @@
 
           <div class="flex items-center gap-2 sm:gap-5">
             <nav class="hidden items-center gap-6 md:flex">
+              <a href="/" :class="nc('/')" x-text="$store.i18n.t('nav.home')">Home</a>
               <a href="/about/" :class="nc('/about/')" x-text="$store.i18n.t('nav.about')">About</a>
               <a href="/experience/" :class="nc('/experience/')" x-text="$store.i18n.t('nav.experience')">Experience</a>
               <a href="/projects/" :class="nc('/projects/')" x-text="$store.i18n.t('nav.projects')">Projects</a>
@@ -124,169 +125,130 @@
           <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
             <!-- Project 01 -->
-            <article x-data="{ open: false }" x-on:click="open = !open" class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
+            <a href="/projects/p01/" class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-mint/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Ruby · Rails</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">01</span>
               </div>
               <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight" x-text="$store.i18n.t('projects.p01_title')">Salary Calculator</h2>
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p01_desc')"></p>
-              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
-                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                <span x-text="open ? $store.i18n.t('projects.toggle_less') : $store.i18n.t('projects.toggle_details')"></span>
+              <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <span x-text="$store.i18n.t('projects.detail_view')">View details</span>
+                <svg class="size-3 transition-transform duration-200 group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
-                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p01_detail')"></p>
-              </div>
-            </article>
+            </a>
 
             <!-- Project 02 -->
-            <article x-data="{ open: false }" x-on:click="open = !open" class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
+            <a href="/projects/p02/" class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Architecture</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">02</span>
               </div>
               <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight" x-text="$store.i18n.t('projects.p02_title')">Outputs Module</h2>
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p02_desc')"></p>
-              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
-                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                <span x-text="open ? $store.i18n.t('projects.toggle_less') : $store.i18n.t('projects.toggle_details')"></span>
+              <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <span x-text="$store.i18n.t('projects.detail_view')">View details</span>
+                <svg class="size-3 transition-transform duration-200 group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
-                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p02_detail')"></p>
-              </div>
-            </article>
+            </a>
 
             <!-- Project 03 -->
-            <article x-data="{ open: false }" x-on:click="open = !open" class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
+            <a href="/projects/p03/" class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Payroll · Migration</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">03</span>
               </div>
               <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight" x-text="$store.i18n.t('projects.p03_title')">Colombia Payroll</h2>
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500" x-html="$store.i18n.t('projects.p03_desc')"></p>
-              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
-                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                <span x-text="open ? $store.i18n.t('projects.toggle_less') : $store.i18n.t('projects.toggle_details')"></span>
+              <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <span x-text="$store.i18n.t('projects.detail_view')">View details</span>
+                <svg class="size-3 transition-transform duration-200 group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
-                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500" x-html="$store.i18n.t('projects.p03_detail')"></p>
-              </div>
-            </article>
+            </a>
 
             <!-- Project 04 -->
-            <article x-data="{ open: false }" x-on:click="open = !open" class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
+            <a href="/projects/p04/" class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-gold/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Ruby · Testing</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">04</span>
               </div>
               <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight" x-text="$store.i18n.t('projects.p04_title')">CI Pipeline Optimization</h2>
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500" x-html="$store.i18n.t('projects.p04_desc')"></p>
-              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
-                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                <span x-text="open ? $store.i18n.t('projects.toggle_less') : $store.i18n.t('projects.toggle_details')"></span>
+              <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <span x-text="$store.i18n.t('projects.detail_view')">View details</span>
+                <svg class="size-3 transition-transform duration-200 group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
-                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p04_detail')"></p>
-              </div>
-            </article>
+            </a>
 
             <!-- Project 05 -->
-            <article x-data="{ open: false }" x-on:click="open = !open" class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
+            <a href="/projects/p05/" class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-peach/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Performance · Ruby</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">05</span>
               </div>
               <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight" x-text="$store.i18n.t('projects.p05_title')">Performance Profiler</h2>
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500" x-html="$store.i18n.t('projects.p05_desc')"></p>
-              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
-                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                <span x-text="open ? $store.i18n.t('projects.toggle_less') : $store.i18n.t('projects.toggle_details')"></span>
+              <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <span x-text="$store.i18n.t('projects.detail_view')">View details</span>
+                <svg class="size-3 transition-transform duration-200 group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
-                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500" x-html="$store.i18n.t('projects.p05_detail')"></p>
-              </div>
-            </article>
+            </a>
 
             <!-- Project 06 -->
-            <article x-data="{ open: false }" x-on:click="open = !open" class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
+            <a href="/projects/p06/" class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Rails · PostgreSQL</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">06</span>
               </div>
               <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight" x-text="$store.i18n.t('projects.p06_title')">Large-Scale Data Migration</h2>
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p06_desc')"></p>
-              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
-                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                <span x-text="open ? $store.i18n.t('projects.toggle_less') : $store.i18n.t('projects.toggle_details')"></span>
+              <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <span x-text="$store.i18n.t('projects.detail_view')">View details</span>
+                <svg class="size-3 transition-transform duration-200 group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
-                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p06_detail')"></p>
-              </div>
-            </article>
+            </a>
 
             <!-- Project 07 — Blockdoze -->
-            <article x-data="{ open: false }" x-on:click="open = !open" class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
+            <a href="/projects/p07/" class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-mint/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Chrome Extension · JS</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">07</span>
               </div>
               <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight" x-text="$store.i18n.t('projects.p07_title')">Blockdoze</h2>
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p07_desc')"></p>
-              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
-                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                <span x-text="open ? $store.i18n.t('projects.toggle_less') : $store.i18n.t('projects.toggle_details')"></span>
+              <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <span x-text="$store.i18n.t('projects.detail_view')">View details</span>
+                <svg class="size-3 transition-transform duration-200 group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
-                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p07_detail')"></p>
-                <a href="https://github.com/holacoma/site-blocker" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-500 hover:text-brand-600">
-                  View on GitHub
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                </a>
-              </div>
-            </article>
+            </a>
 
             <!-- Project 08 — Pixel Race -->
-            <article x-data="{ open: false }" x-on:click="open = !open" class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
+            <a href="/projects/p08/" class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Rails · WebSockets</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">08</span>
               </div>
               <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight" x-text="$store.i18n.t('projects.p08_title')">Pixel Race</h2>
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p08_desc')"></p>
-              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
-                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                <span x-text="open ? $store.i18n.t('projects.toggle_less') : $store.i18n.t('projects.toggle_details')"></span>
+              <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <span x-text="$store.i18n.t('projects.detail_view')">View details</span>
+                <svg class="size-3 transition-transform duration-200 group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
-                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p08_detail')"></p>
-                <a href="https://github.com/holacoma/horse-race-api" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-500 hover:text-brand-600">
-                  View on GitHub
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                </a>
-              </div>
-            </article>
+            </a>
 
             <!-- Project 09 — Chechelab -->
-            <article x-data="{ open: false }" x-on:click="open = !open" class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
+            <a href="/projects/p09/" class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-gold/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Rails · Algorithms</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">09</span>
               </div>
               <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight" x-text="$store.i18n.t('projects.p09_title')">Chechelab</h2>
-              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('projects.p09_desc')"></p>
-              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
-                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                <span x-text="open ? $store.i18n.t('projects.toggle_less') : $store.i18n.t('projects.toggle_details')"></span>
+              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500" x-html="$store.i18n.t('projects.p09_desc')"></p>
+              <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <span x-text="$store.i18n.t('projects.detail_view')">View details</span>
+                <svg class="size-3 transition-transform duration-200 group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
-                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500" x-html="$store.i18n.t('projects.p09_detail')"></p>
-                <a href="https://github.com/holacoma/chechelab" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-500 hover:text-brand-600">
-                  View on GitHub
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                </a>
-              </div>
-            </article>
+            </a>
 
           </div>
         </section>

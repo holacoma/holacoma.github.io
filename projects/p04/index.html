@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>CI Pipeline Optimization — Ezequiel Amador</title>
+    <meta name="description" content="Introduced parallel_tests for horizontal CI scaling, cutting pipeline execution time significantly." />
+    <meta name="author" content="Ezequiel Amador" />
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+      @theme {
+        --default-font-family: "Inter"; --font-mono: "JetBrains Mono", ui-monospace, monospace;
+        --color-cream-50: oklch(0.983 0.003 89); --color-cream-100: oklch(0.974 0.004 89); --color-cream-200: oklch(0.948 0.006 90); --color-cream-300: oklch(0.918 0.005 90); --color-cream-400: oklch(0.835 0.008 89); --color-cream-500: oklch(0.677 0.009 89); --color-cream-600: oklch(0.553 0.010 89); --color-cream-700: oklch(0.408 0.007 89); --color-cream-800: oklch(0.288 0.008 89); --color-cream-900: oklch(0.205 0.007 89); --color-cream-950: oklch(0.155 0.005 89);
+        --color-brand-400: oklch(0.704 0.187 43); --color-brand-500: oklch(0.636 0.225 36); --color-brand-700: oklch(0.470 0.158 38);
+        --color-peach: oklch(0.769 0.064 41); --color-mint: oklch(0.786 0.063 144); --color-azure: oklch(0.766 0.062 246); --color-lavender: oklch(0.738 0.072 297); --color-gold: oklch(0.633 0.111 65);
+        --color-brand-50: oklch(0.971 0.014 55); --color-brand-100: oklch(0.929 0.038 60); --color-brand-200: oklch(0.864 0.083 55); --color-brand-300: oklch(0.789 0.142 51); --color-brand-600: oklch(0.563 0.193 36); --color-brand-800: oklch(0.372 0.124 39); --color-brand-900: oklch(0.281 0.092 39); --color-brand-950: oklch(0.183 0.061 41);
+      }
+    </style>
+    <script defer src="/assets/js/translations.js"></script>
+    <script defer src="/assets/js/i18n.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>[x-cloak] { display: none !important; } #swup { transition: opacity 0.3s ease; } html.is-animating #swup { opacity: 0; }</style>
+  </head>
+  <body>
+    <div x-data="{ darkMode: false, toggleDarkMode() { this.darkMode = !this.darkMode; if (this.darkMode) { document.body.parentNode.classList.add('dark'); } else { document.body.parentNode.classList.remove('dark'); } }, nc(p) { return Alpine.store('i18n').path === p ? 'text-sm font-semibold text-cream-900 underline underline-offset-4 decoration-brand-500 dark:text-white' : 'text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white'; } }" class="min-h-dvh min-w-[320px] bg-cream-100 text-cream-900 dark:bg-cream-950 dark:text-cream-200">
+      <header class="border-b border-cream-300 dark:border-white/10">
+        <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:px-10">
+          <a href="/" class="inline-flex items-baseline gap-1 font-medium tracking-tight">ezequiel.</a>
+          <div class="flex items-center gap-2 sm:gap-5">
+            <nav class="hidden items-center gap-6 md:flex">
+              <a href="/about/" :class="nc('/about/')" x-text="$store.i18n.t('nav.about')">About</a>
+              <a href="/experience/" :class="nc('/experience/')" x-text="$store.i18n.t('nav.experience')">Experience</a>
+              <a href="/projects/" :class="nc('/projects/')" x-text="$store.i18n.t('nav.projects')">Projects</a>
+              <a href="/education/" :class="nc('/education/')" x-text="$store.i18n.t('nav.education')">Education</a>
+              <a href="/contact/" :class="nc('/contact/')" x-text="$store.i18n.t('nav.contact')">Contact</a>
+            </nav>
+            <button x-on:click="$store.i18n.set($store.i18n.lang === 'en' ? 'es' : 'en')" x-text="$store.i18n.t('nav.lang_toggle')" type="button" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">🇪🇸 ES</button>
+            <button x-on:click="toggleDarkMode()" type="button" class="inline-flex size-9 items-center justify-center rounded-md text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white" aria-label="Toggle theme">
+              <svg x-show="!darkMode" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
+              <svg x-show="darkMode" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
+            </button>
+            <a :href="$store.i18n.t('nav.cv_path')" class="inline-flex h-11 items-center gap-2 rounded-md bg-cream-900 px-5 text-sm font-medium text-cream-100 hover:bg-cream-800 dark:bg-white dark:text-cream-950 dark:hover:bg-white/90">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
+              <span class="hidden sm:inline" x-text="$store.i18n.t('nav.download_cv')">Download CV</span>
+              <span class="sm:hidden" x-text="$store.i18n.t('nav.cv_short')">CV</span>
+            </a>
+          </div>
+        </div>
+      </header>
+      <main id="swup" class="mx-auto max-w-6xl px-5 lg:px-10">
+        <div class="py-20">
+          <a href="/projects/" class="inline-flex items-center gap-1.5 text-sm font-medium text-cream-600 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="m15 18-6-6 6-6"/></svg>
+            <span x-text="$store.i18n.t('projects.detail_back')">← Projects</span>
+          </a>
+          <div class="mt-8">
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-sm text-cream-500 dark:text-cream-600">04</span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-gold/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Ruby · Testing</span>
+            </div>
+            <h1 class="mt-4 text-3xl font-normal leading-tight tracking-tight md:text-4xl" x-text="$store.i18n.t('projects.p04_title')">CI Pipeline Optimization</h1>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-6 border-b border-cream-200 pb-8 dark:border-white/10">
+            <div class="flex flex-col gap-0.5"><span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-500 dark:text-cream-600" x-text="$store.i18n.t('projects.detail_role')">Role</span><span class="text-sm font-medium text-cream-800 dark:text-cream-300" x-text="$store.i18n.t('projects.p04_role')"></span></div>
+            <div class="flex flex-col gap-0.5"><span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-500 dark:text-cream-600" x-text="$store.i18n.t('projects.detail_team')">Team</span><span class="text-sm font-medium text-cream-800 dark:text-cream-300" x-text="$store.i18n.t('projects.p04_team')"></span></div>
+            <div class="flex flex-col gap-0.5"><span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-500 dark:text-cream-600" x-text="$store.i18n.t('projects.detail_duration')">Duration</span><span class="text-sm font-medium text-cream-800 dark:text-cream-300" x-text="$store.i18n.t('projects.p04_duration')"></span></div>
+          </div>
+          <div class="mt-12 grid gap-12 lg:grid-cols-12">
+            <div class="space-y-10 lg:col-span-8">
+              <p class="text-base/relaxed text-cream-700 dark:text-cream-400" x-html="$store.i18n.t('projects.p04_desc')"></p>
+              <div>
+                <h2 class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('projects.detail_impact')">Impact</h2>
+                <ul class="mt-4 space-y-2" x-data="{ items: $store.i18n.t('projects.p04_impact').split('|') }">
+                  <template x-for="item in items" :key="item"><li class="flex gap-3 text-sm/relaxed text-cream-700 dark:text-cream-400"><span class="mt-[0.45rem] size-1.5 shrink-0 rounded-full bg-brand-400"></span><span x-text="item"></span></li></template>
+                </ul>
+              </div>
+              <div>
+                <h2 class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('projects.detail_approach')">How I did it</h2>
+                <p class="mt-4 text-sm/relaxed text-cream-700 dark:text-cream-400" x-html="$store.i18n.t('projects.p04_approach')"></p>
+              </div>
+              <div>
+                <h2 class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('projects.detail_challenges')">Technical challenges</h2>
+                <p class="mt-4 text-sm/relaxed text-cream-700 dark:text-cream-400" x-html="$store.i18n.t('projects.p04_challenges')"></p>
+              </div>
+            </div>
+            <div class="space-y-8 lg:col-span-4">
+              <div>
+                <h2 class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('projects.detail_stack')">Full tech stack</h2>
+                <div class="mt-4 flex flex-wrap gap-2" x-data="{ tags: $store.i18n.t('projects.p04_stack').split('|') }">
+                  <template x-for="tag in tags" :key="tag"><span class="inline-flex items-center rounded-full bg-cream-200 px-2.5 py-1 text-xs font-medium text-cream-800 dark:bg-white/10 dark:text-cream-300" x-text="tag"></span></template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="border-t border-cream-300 dark:border-white/10">
+        <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-cream-700 sm:flex-row sm:items-center sm:justify-between lg:px-10 dark:text-cream-500">
+          <p><span x-text="$store.i18n.t('footer.resume')">Resume</span> &copy; <script>document.write(new Date().getFullYear());</script> · Ezequiel Amador</p>
+          <nav class="flex flex-wrap gap-5">
+            <a href="/about/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300" x-text="$store.i18n.t('nav.about')">About</a>
+            <a href="/experience/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300" x-text="$store.i18n.t('nav.experience')">Experience</a>
+            <a href="/projects/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300" x-text="$store.i18n.t('nav.projects')">Projects</a>
+            <a href="/education/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300" x-text="$store.i18n.t('nav.education')">Education</a>
+            <a href="/contact/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300" x-text="$store.i18n.t('nav.contact')">Contact</a>
+          </nav>
+          <button x-on:click="$store.i18n.set($store.i18n.lang === 'en' ? 'es' : 'en')" x-text="$store.i18n.t('footer.lang_switch')" type="button" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">🇪🇸 Ver en Español</button>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/js/swup.min.js"></script>
+    <script>
+      const swup = new Swup({ animateHistoryBrowsing: true });
+      swup.hooks.on('page:view', () => { const container = document.querySelector('#swup'); if (container) Alpine.initTree(container); if (window.Alpine) Alpine.store('i18n').syncPath(); });
+    </script>
+  </body>
+</html>
