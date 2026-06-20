@@ -82,6 +82,7 @@
 
           <div class="flex items-center gap-2 sm:gap-5">
             <nav class="hidden items-center gap-6 md:flex">
+              <a href="/" :class="nc('/')" x-text="$store.i18n.t('nav.home')">Home</a>
               <a href="/about/" :class="nc('/about/')" x-text="$store.i18n.t('nav.about')">About</a>
               <a href="/experience/" :class="nc('/experience/')" x-text="$store.i18n.t('nav.experience')">Experience</a>
               <a href="/projects/" :class="nc('/projects/')" x-text="$store.i18n.t('nav.projects')">Projects</a>
@@ -173,8 +174,8 @@
                   <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">12</dd>
                 </div>
                 <div>
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('home.stat_countries_label')">Countries</dt>
-                  <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">3</dd>
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('home.stat_projects_label')">Projects</dt>
+                  <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">9</dd>
                 </div>
               </dl>
             </div>
