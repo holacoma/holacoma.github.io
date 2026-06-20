@@ -48,7 +48,10 @@
     </style>
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <style>[x-cloak] { display: none !important; }</style>
+    <style>[x-cloak] { display: none !important; }
+      #swup { transition: opacity 0.3s ease; }
+      html.is-animating #swup { opacity: 0; }
+    </style>
   </head>
   <body>
     <div
@@ -79,7 +82,7 @@
               <a href="/en/contact/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Contact</a>
             </nav>
 
-            <a href="/es/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">🇪🇸 ES</a>
+            <a href="/es/" data-no-swup class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">🇪🇸 ES</a>
 
             <button
               x-on:click="toggleDarkMode()"
@@ -116,7 +119,7 @@
       </header>
       <!-- END Top Nav -->
 
-      <main class="mx-auto max-w-6xl px-5 lg:px-10">
+      <main id="swup" class="mx-auto max-w-6xl px-5 lg:px-10">
         <!-- Education -->
         <section class="py-20">
           <div class="grid gap-12 lg:grid-cols-12">
@@ -154,10 +157,18 @@
             <a href="/en/education/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">Education</a>
             <a href="/en/contact/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">Contact</a>
           </nav>
-          <a href="/es/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">🇪🇸 Ver en Español</a>
+          <a href="/es/" data-no-swup class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">🇪🇸 Ver en Español</a>
         </div>
       </footer>
       <!-- END Footer -->
     </div>
+    <script src="/assets/js/swup.min.js"></script>
+    <script>
+      const swup = new Swup({ animateHistoryBrowsing: true });
+      swup.hooks.on('page:view', () => {
+        const container = document.querySelector('#swup');
+        if (container) Alpine.initTree(container);
+      });
+    </script>
   </body>
 </html>
