@@ -75,6 +75,7 @@
               <a href="/en/about/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">About</a>
               <a href="/en/experience/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Experience</a>
               <a href="/en/projects/" class="text-sm font-semibold text-cream-900 underline underline-offset-4 decoration-brand-500 dark:text-white">Projects</a>
+              <a href="/en/education/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Education</a>
               <a href="/en/contact/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Contact</a>
             </nav>
 
@@ -122,12 +123,18 @@
             <div>
               <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">03 · Projects</span>
               <h1 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">Selected work.</h1>
+              <p class="mt-3 text-sm text-cream-600 dark:text-cream-500">Click any card to expand details.</p>
             </div>
           </div>
 
           <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            <!-- Project 1 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+
+            <!-- Project 01 -->
+            <article
+              x-data="{ open: false }"
+              x-on:click="open = !open"
+              class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700"
+            >
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-mint/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Ruby · Rails</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">01</span>
@@ -136,10 +143,21 @@
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
                 Binary search to find the exact net salary from gross input. Harder than it sounds when you factor in progressive tax brackets and Chilean labor law.
               </p>
+              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <span x-text="open ? 'Less' : 'Details'"></span>
+              </div>
+              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
+                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500">Applies binary search over the existing liquidation engine — no separate calculator, no business logic duplication. Handles AFP, health plan, SIS deductions, and progressive bracket edge cases in Chilean labor law precisely.</p>
+              </div>
             </article>
 
-            <!-- Project 2 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+            <!-- Project 02 -->
+            <article
+              x-data="{ open: false }"
+              x-on:click="open = !open"
+              class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700"
+            >
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Architecture</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">02</span>
@@ -148,10 +166,21 @@
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
                 Core architecture for file generation and management at scale across the Buk ecosystem. Built to handle thousands of documents per payroll run.
               </p>
+              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <span x-text="open ? 'Less' : 'Details'"></span>
+              </div>
+              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
+                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500">A pluggable adapter layer decoupling file generation (PDF, Excel, TXT) from core payroll logic. Powers document output for thousands of companies per payroll cycle. Designed for reliability first — zero tolerance for missing or corrupt files.</p>
+              </div>
             </article>
 
-            <!-- Project 3 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+            <!-- Project 03 -->
+            <article
+              x-data="{ open: false }"
+              x-on:click="open = !open"
+              class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700"
+            >
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Payroll · Migration</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">03</span>
@@ -160,10 +189,21 @@
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
                 Led the deprecation of the <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">colombia</code> branch into the core product, and introduced partial and bi-weekly pay stubs.
               </p>
+              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <span x-text="open ? 'Less' : 'Details'"></span>
+              </div>
+              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
+                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500">Led a team of 12 from design through deployment. Consolidated the <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">colombia</code> feature branch into the core product using phased feature flags. Delivered quincena (bi-weekly) and partial pay stub types previously missing from the system.</p>
+              </div>
             </article>
 
-            <!-- Project 4 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+            <!-- Project 04 -->
+            <article
+              x-data="{ open: false }"
+              x-on:click="open = !open"
+              class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700"
+            >
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-gold/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Ruby · Testing</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">04</span>
@@ -172,10 +212,21 @@
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
                 Introduced <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">parallel_tests</code> for horizontal CI scaling across simultaneous processes, cutting pipeline execution time significantly on every cycle.
               </p>
+              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <span x-text="open ? 'Less' : 'Details'"></span>
+              </div>
+              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
+                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500">Parallelized the test suite across N simultaneous processes, reducing overall CI time. Also introduced test isolation strategies to eliminate shared-state flakiness that was causing false positives before the change.</p>
+              </div>
             </article>
 
-            <!-- Project 5 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+            <!-- Project 05 -->
+            <article
+              x-data="{ open: false }"
+              x-on:click="open = !open"
+              class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700"
+            >
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-peach/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Performance · Ruby</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">05</span>
@@ -184,10 +235,21 @@
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
                 On-demand tool to identify and isolate payroll bottlenecks using <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">memory_profiler</code> and <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">stackprof</code>. Built after critical regressions proved invisible to existing monitoring.
               </p>
+              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <span x-text="open ? 'Less' : 'Details'"></span>
+              </div>
+              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
+                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500">Wraps <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">memory_profiler</code> and <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">stackprof</code> behind a minimal on-demand interface. Enabled the team to catch O(n²) loops and memory bloat in production liquidation runs without a staging restart or code deploy.</p>
+              </div>
             </article>
 
-            <!-- Project 6 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+            <!-- Project 06 -->
+            <article
+              x-data="{ open: false }"
+              x-on:click="open = !open"
+              class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700"
+            >
               <div class="flex items-center justify-between">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Rails · PostgreSQL</span>
                 <span class="font-mono text-xs text-cream-600 dark:text-cream-500">06</span>
@@ -196,7 +258,96 @@
               <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
                 Led production data migrations across Chile, Colombia, and Peru — over 10 million records total. Incremental, reversible, monitored process: zero downtime, zero incidents.
               </p>
+              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <span x-text="open ? 'Less' : 'Details'"></span>
+              </div>
+              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
+                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500">Multi-phase migration using background jobs and idempotent upserts. Each phase had automated validation checks and a rollback path baked in. Ran across three countries with different payroll schemas — zero incidents throughout.</p>
+              </div>
             </article>
+
+            <!-- Project 07 — Blockdoze -->
+            <article
+              x-data="{ open: false }"
+              x-on:click="open = !open"
+              class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700"
+            >
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-mint/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Chrome Extension · JS</span>
+                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">07</span>
+              </div>
+              <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Blockdoze</h2>
+              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Manifest V3 Chrome extension for blocking distracting websites on a configurable schedule. Per-domain rules, day-of-week scheduling, daily time budgets with a live progress bar, and path/subdomain exceptions.
+              </p>
+              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <span x-text="open ? 'Less' : 'Details'"></span>
+              </div>
+              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
+                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500">Ships with two UI themes: retro Windows 98 and modern. Includes a YouTube Music audio-mode script so you can listen without opening the distracting tab. Budget timer pauses automatically when the tab loses focus.</p>
+                <a href="https://github.com/holacoma/site-blocker" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-500 hover:text-brand-600">
+                  View on GitHub
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 08 — Pixel Race -->
+            <article
+              x-data="{ open: false }"
+              x-on:click="open = !open"
+              class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700"
+            >
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Rails · WebSockets</span>
+                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">08</span>
+              </div>
+              <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Pixel Race</h2>
+              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Real-time multiplayer pixel-art horse racing game. Rails 8 backend with Action Cable broadcasting race updates every 0.3s. Frontend uses Stimulus + HTMX and NES.css for the retro aesthetic.
+              </p>
+              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <span x-text="open ? 'Less' : 'Details'"></span>
+              </div>
+              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
+                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500">Google OAuth2 or guest auth. SolidQueue handles the race simulation background job. Deployed with Kamal + Thruster. An exploration of Rails 8's real-time primitives — Action Cable, SolidCable, SolidQueue — under production conditions.</p>
+                <a href="https://github.com/holacoma/horse-race-api" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-500 hover:text-brand-600">
+                  View on GitHub
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 09 — Chechelab -->
+            <article
+              x-data="{ open: false }"
+              x-on:click="open = !open"
+              class="flex cursor-pointer flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700"
+            >
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-gold/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Rails · Algorithms</span>
+                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">09</span>
+              </div>
+              <h2 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Chechelab</h2>
+              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Kata sandbox built in Rails 7.2 for practicing algorithmic problems. Uses a packs-rails architecture to isolate business logic, with a custom Minitest DSL for table-driven tests.
+              </p>
+              <div class="mt-4 flex select-none items-center gap-1 text-xs font-medium text-cream-500 dark:text-cream-600">
+                <svg x-bind:class="{ 'rotate-180': open }" class="size-3 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <span x-text="open ? 'Less' : 'Details'"></span>
+              </div>
+              <div x-show="open" x-transition:enter="transition-opacity duration-150" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-on:click.stop class="mt-4 border-t border-cream-200 pt-4 dark:border-white/10">
+                <p class="text-sm/relaxed text-cream-700 dark:text-cream-500">Exposes <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">POST /spin_words</code> — reverses words with 5+ letters, leaves shorter ones intact. Applies modular monolith patterns (packs-rails) even in a toy project. Clean by design, not by accident.</p>
+                <a href="https://github.com/holacoma/chechelab" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-500 hover:text-brand-600">
+                  View on GitHub
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
+              </div>
+            </article>
+
           </div>
         </section>
         <!-- END Projects -->
@@ -210,6 +361,7 @@
             <a href="/en/about/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">About</a>
             <a href="/en/experience/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">Experience</a>
             <a href="/en/projects/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">Projects</a>
+            <a href="/en/education/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">Education</a>
             <a href="/en/contact/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">Contact</a>
           </nav>
           <a href="/es/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">🇪🇸 Ver en Español</a>
