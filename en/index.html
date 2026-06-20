@@ -7,14 +7,11 @@
     <meta name="description" content="Staff Engineer with 8+ years of experience building full stack software, focused on complex systems and high-impact architecture." />
     <meta name="author" content="Ezequiel Amador" />
 
-    <!-- Inter + JetBrains Mono web fonts from bunny.net (GDPR compliant) -->
     <link rel="preconnect" href="https://fonts.bunny.net" />
     <link href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    <!-- Tailwind CSS Play CDN -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
-    <!-- Tailwind CSS v4 Configuration -->
     <style type="text/tailwindcss">
       @custom-variant dark (&:where(.dark, .dark *));
       @theme {
@@ -50,12 +47,10 @@
       }
     </style>
 
-    <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>[x-cloak] { display: none !important; }</style>
   </head>
   <body>
-    <!-- Page Container -->
     <div
       x-data="{
         darkMode: false,
@@ -73,25 +68,18 @@
       <!-- Top Nav -->
       <header class="border-b border-cream-300 dark:border-white/10">
         <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:px-10">
-          <!-- Wordmark -->
-          <a href="javascript:void(0)" class="inline-flex items-baseline gap-1 font-medium tracking-tight">
-            ezequiel.
-          </a>
+          <a href="/en/" class="inline-flex items-baseline gap-1 font-medium tracking-tight">ezequiel.</a>
 
-          <!-- Right side: nav + actions -->
           <div class="flex items-center gap-2 sm:gap-5">
             <nav class="hidden items-center gap-6 md:flex">
-              <a href="#about" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">About</a>
-              <a href="#experience" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Experience</a>
-              <a href="#projects" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Projects</a>
-              <a href="#education" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Education</a>
-              <a href="#contact" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Contact</a>
+              <a href="/en/about/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">About</a>
+              <a href="/en/experience/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Experience</a>
+              <a href="/en/projects/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Projects</a>
+              <a href="/en/contact/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">Contact</a>
             </nav>
 
-            <!-- Language switcher -->
             <a href="/es/" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">🇪🇸 ES</a>
 
-            <!-- Toggle Dark Mode -->
             <button
               x-on:click="toggleDarkMode()"
               type="button"
@@ -110,7 +98,6 @@
               </svg>
             </button>
 
-            <!-- Download CV -->
             <a
               href="/cvs/CV_Ezequiel_Ramirez_TechLead_EN.pdf"
               class="inline-flex h-11 items-center gap-2 rounded-md bg-cream-900 px-5 text-sm font-medium text-cream-100 hover:bg-cream-800 dark:bg-white dark:text-cream-950 dark:hover:bg-white/90"
@@ -147,31 +134,35 @@
 
               <!-- CTAs -->
               <div class="mt-8 flex flex-wrap items-center gap-3">
-                <a href="#contact" class="inline-flex h-10 items-center gap-2 rounded-md bg-brand-500 px-5 text-sm font-medium text-white hover:bg-brand-600">
+                <a href="/en/contact/" class="inline-flex h-10 items-center gap-2 rounded-md bg-brand-500 px-5 text-sm font-medium text-white hover:bg-brand-600">
                   Get in touch
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4">
                     <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
-                <a href="#experience" class="inline-flex h-10 items-center gap-2 rounded-md border border-cream-400 bg-white px-5 text-sm font-medium text-cream-900 hover:bg-cream-50 dark:border-white/15 dark:bg-transparent dark:text-white dark:hover:bg-white/5">
+                <a href="/en/experience/" class="inline-flex h-10 items-center gap-2 rounded-md border border-cream-400 bg-white px-5 text-sm font-medium text-cream-900 hover:bg-cream-50 dark:border-white/15 dark:bg-transparent dark:text-white dark:hover:bg-white/5">
                   View experience
                 </a>
               </div>
               <!-- END CTAs -->
 
               <!-- Stat strip -->
-              <dl class="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-cream-300 pt-8 dark:border-white/10">
+              <dl class="mt-12 grid max-w-xl grid-cols-2 gap-6 border-t border-cream-300 pt-8 dark:border-white/10 sm:grid-cols-4">
                 <div>
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Years</dt>
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Years exp.</dt>
                   <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">8+</dd>
                 </div>
                 <div>
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Projects</dt>
-                  <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">6</dd>
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Records migrated</dt>
+                  <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">10M+</dd>
                 </div>
                 <div>
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Companies</dt>
-                  <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">2</dd>
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Engineers led</dt>
+                  <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">12</dd>
+                </div>
+                <div>
+                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Countries</dt>
+                  <dd class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight">3</dd>
                 </div>
               </dl>
               <!-- END Stat strip -->
@@ -193,10 +184,8 @@
                 x-init="setInterval(() => next(), 4500)"
                 class="relative overflow-hidden rounded-xl border border-cream-300 bg-white dark:border-white/10 dark:bg-white/5"
               >
-                <!-- Aspect ratio spacer -->
                 <div class="aspect-4/5 w-full"></div>
 
-                <!-- Slides -->
                 <template x-for="(src, i) in imgs" :key="i">
                   <img
                     :src="src"
@@ -212,7 +201,6 @@
                   />
                 </template>
 
-                <!-- Overlay badges -->
                 <div class="absolute top-4 left-4 right-4 flex justify-between">
                   <span class="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 backdrop-blur dark:bg-cream-950/80 dark:text-cream-100">
                     <span class="size-1.5 rounded-full bg-mint"></span>
@@ -223,7 +211,6 @@
                   </span>
                 </div>
 
-                <!-- Prev button -->
                 <button
                   x-on:click="prev()"
                   type="button"
@@ -233,7 +220,6 @@
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="m15 18-6-6 6-6" /></svg>
                 </button>
 
-                <!-- Next button -->
                 <button
                   x-on:click="next()"
                   type="button"
@@ -243,7 +229,6 @@
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="m9 18 6-6-6-6" /></svg>
                 </button>
 
-                <!-- Dot indicators -->
                 <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5">
                   <template x-for="(src, i) in imgs" :key="i">
                     <button
@@ -262,326 +247,62 @@
         </section>
         <!-- END Hero -->
 
-        <!-- About -->
-        <section id="about" class="border-b border-cream-300 py-20 dark:border-white/10">
-          <div class="grid gap-12 lg:grid-cols-12">
-            <div class="lg:col-span-4">
+        <!-- Quick Nav -->
+        <section class="py-16">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Explore</p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+
+            <a href="/en/about/" class="group flex flex-col gap-4 rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">01 · About</span>
-              <h2 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">Complex systems, calm code.</h2>
-              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                Deep expertise in payroll and compensation from both a technical and functional perspective. I build high-precision solutions in a domain where rounding errors cost real money.
-              </p>
-            </div>
+              <h3 class="text-lg font-normal leading-tight tracking-tight">Stack &amp; philosophy</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-auto size-4 text-cream-400 transition-transform group-hover:translate-x-0.5 dark:text-cream-600">
+                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
 
-            <div class="min-w-0 lg:col-span-8">
-              <!-- Code block -->
-              <div class="overflow-hidden rounded-xl border border-cream-300 bg-white dark:border-white/10 dark:bg-white/5">
-                <div class="flex items-center gap-2 border-b border-cream-300 px-4 py-3 dark:border-white/10">
-                  <span class="size-2.5 rounded-full bg-peach"></span>
-                  <span class="size-2.5 rounded-full bg-gold"></span>
-                  <span class="size-2.5 rounded-full bg-mint"></span>
-                  <span class="ml-3 font-mono text-xs text-cream-600 dark:text-cream-500">~/about/ezequiel.rb</span>
-                </div>
-                <pre class="overflow-x-auto px-5 py-5 font-mono text-[13px] leading-relaxed text-cream-900 dark:text-cream-200"><span class="text-cream-600 dark:text-cream-500"># stack</span>
-<span class="text-gold">stack</span> = {
-  languages:  [<span class="text-mint">"Ruby"</span>, <span class="text-mint">"Python"</span>, <span class="text-mint">"JavaScript"</span>, <span class="text-mint">"Bash"</span>],
-  frontend:   [<span class="text-mint">"Vue.js"</span>, <span class="text-mint">"Hotwire"</span>, <span class="text-mint">"React"</span>],
-  backend:    [<span class="text-mint">"Rails"</span>, <span class="text-mint">"Django"</span>, <span class="text-mint">"FastAPI"</span>],
-  databases:  [<span class="text-mint">"PostgreSQL"</span>, <span class="text-mint">"MySQL"</span>, <span class="text-mint">"Redis"</span>, <span class="text-mint">"MongoDB"</span>],
-  infra:      [<span class="text-mint">"Kubernetes"</span>, <span class="text-mint">"Docker"</span>, <span class="text-mint">"AWS"</span>, <span class="text-mint">"GCP"</span>],
-  testing:    [<span class="text-mint">"Minitest"</span>, <span class="text-mint">"RSpec"</span>, <span class="text-mint">"parallel_tests"</span>],
-}</pre>
-              </div>
-              <!-- END Code block -->
-
-              <!-- Skill pills -->
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-peach/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Architecture</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-mint/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Payroll</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">APIs</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">AI-native</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-gold/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Full Stack</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-peach/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Performance</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-mint/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Testing</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Leadership</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Migration</span>
-              </div>
-              <!-- END Skill pills -->
-
-              <!-- AI-native note -->
-              <blockquote class="mt-6 border-l-2 border-brand-500 pl-5 text-sm/relaxed italic text-cream-700 dark:text-cream-500">
-                "I use Claude from the terminal, understand how LLMs work under the hood (Skills, memory, context), and follow a structured Do's &amp; Don'ts prompting methodology. AI isn't magic. It's a tool, and you need to know how to use it properly."
-              </blockquote>
-              <!-- END AI-native note -->
-            </div>
-          </div>
-        </section>
-        <!-- END About -->
-
-        <!-- Experience -->
-        <section id="experience" class="border-b border-cream-300 py-20 dark:border-white/10">
-          <div class="grid gap-12 lg:grid-cols-12">
-            <div class="lg:col-span-4">
+            <a href="/en/experience/" class="group flex flex-col gap-4 rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">02 · Experience</span>
-              <h2 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">From dev to staff.</h2>
-              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                Eight years spanning startup and scale-up roles, leading teams and building payroll infrastructure for thousands of companies across Latin America.
-              </p>
-            </div>
+              <h3 class="text-lg font-normal leading-tight tracking-tight">From dev to staff.</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-auto size-4 text-cream-400 transition-transform group-hover:translate-x-0.5 dark:text-cream-600">
+                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
 
-            <ul class="space-y-3 lg:col-span-8">
-              <li class="rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-                <div class="flex flex-wrap items-baseline justify-between gap-3">
-                  <h3 class="text-[1.375rem] font-normal leading-snug tracking-tight">Staff Engineer</h3>
-                  <span class="font-mono text-xs text-cream-600 dark:text-cream-500">Feb 2023 – Jun 2026</span>
-                </div>
-                <p class="mt-1 text-sm font-medium text-brand-500">Buk</p>
-                <ul class="mt-3 space-y-1.5 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Architected the Outputs module: reliable, scalable system for generating and managing financial files across the Buk ecosystem.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Led a ~2.4 million-record production data migration — incremental, reversible, monitored, zero downtime, zero incidents.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Built an on-demand performance profiler to isolate payroll bottlenecks using <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">memory_profiler</code> and <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">stackprof</code>.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Ran TDD and performance workshops for multiple teams; one mentee went on to found the company's AI Guild.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Participated in hiring, cross-team architecture decisions, and technical knowledge-sharing sessions (Outputs University).</span></li>
-                </ul>
-              </li>
-
-              <li class="rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-                <div class="flex flex-wrap items-baseline justify-between gap-3">
-                  <h3 class="text-[1.375rem] font-normal leading-snug tracking-tight">Engineering Manager / Tech Lead</h3>
-                  <span class="font-mono text-xs text-cream-600 dark:text-cream-500">Feb 2021 – Jan 2023</span>
-                </div>
-                <p class="mt-1 text-sm font-medium text-brand-500">Buk</p>
-                <ul class="mt-3 space-y-1.5 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Grew the Colombia Payroll team from 4 to 12 engineers, managing career development, reviews, and 1-on-1s.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Delivered partial and bi-weekly pay stubs, coordinating the team from design through deployment.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Eliminated critical technical debt by consolidating dispersed business logic into the core product.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Worked directly with the Product Manager to align technical vision with business goals.</span></li>
-                </ul>
-              </li>
-
-              <li class="rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-                <div class="flex flex-wrap items-baseline justify-between gap-3">
-                  <h3 class="text-[1.375rem] font-normal leading-snug tracking-tight">Software Developer</h3>
-                  <span class="font-mono text-xs text-cream-600 dark:text-cream-500">Jun 2019 – Jan 2021</span>
-                </div>
-                <p class="mt-1 text-sm font-medium text-brand-500">Buk</p>
-                <ul class="mt-3 space-y-1.5 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Built the Net Salary Simulator using binary search over the existing liquidation engine — high precision, no core duplication.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Introduced <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">parallel_tests</code>, scaling the CI pipeline horizontally and cutting execution times significantly.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>First to add custom functions to the Dentaku expression engine (<code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">periodo_anterior</code>), opening a new extensibility layer for remuneration formulas.</span></li>
-                </ul>
-              </li>
-
-              <li class="rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-                <div class="flex flex-wrap items-baseline justify-between gap-3">
-                  <h3 class="text-[1.375rem] font-normal leading-snug tracking-tight">Full Stack Developer</h3>
-                  <span class="font-mono text-xs text-cream-600 dark:text-cream-500">Feb 2017 – May 2019</span>
-                </div>
-                <p class="mt-1 text-sm font-medium text-brand-500">Tecnosmart</p>
-                <ul class="mt-3 space-y-1.5 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Lead developer on projects for Mallplaza and Lipigas, owning design, backend, frontend, QA, and client delivery end-to-end.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Built a payroll system in Python/Django for Lipigas: vendors entered sales, the system calculated KPIs, determined bonus eligibility, and generated Excel files feeding directly into SAP.</span></li>
-                  <li class="flex gap-2"><span class="mt-2 size-1 shrink-0 rounded-full bg-brand-400"></span><span>Worked across Python, Django, Ruby, PHP, JavaScript, and infrastructure (VLANs, firewalls, socket communication) as each project required.</span></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <!-- END Experience -->
-
-        <!-- Projects -->
-        <section id="projects" class="border-b border-cream-300 py-20 dark:border-white/10">
-          <div class="flex flex-wrap items-end justify-between gap-4">
-            <div>
+            <a href="/en/projects/" class="group flex flex-col gap-4 rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
               <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">03 · Projects</span>
-              <h2 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">Selected work.</h2>
-            </div>
-          </div>
+              <h3 class="text-lg font-normal leading-tight tracking-tight">Selected work.</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-auto size-4 text-cream-400 transition-transform group-hover:translate-x-0.5 dark:text-cream-600">
+                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
 
-          <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            <!-- Project 1 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-              <div class="flex items-center justify-between">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-mint/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Ruby · Rails</span>
-                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">01</span>
-              </div>
-              <h3 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Salary Calculator</h3>
-              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                Binary search to find the exact net salary from gross input. Harder than it sounds when you factor in progressive tax brackets and Chilean labor law.
-              </p>
-            </article>
+            <a href="/en/contact/" class="group flex flex-col gap-4 rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">04 · Contact</span>
+              <h3 class="text-lg font-normal leading-tight tracking-tight">Let's build something.</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-auto size-4 text-cream-400 transition-transform group-hover:translate-x-0.5 dark:text-cream-600">
+                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
 
-            <!-- Project 2 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-              <div class="flex items-center justify-between">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Architecture</span>
-                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">02</span>
-              </div>
-              <h3 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Outputs Module</h3>
-              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                Core architecture for file generation and management at scale across the Buk ecosystem. Built to handle thousands of documents per payroll run.
-              </p>
-            </article>
-
-            <!-- Project 3 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-              <div class="flex items-center justify-between">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Payroll · Migration</span>
-                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">03</span>
-              </div>
-              <h3 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Colombia Payroll</h3>
-              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                Led the deprecation of the <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">colombia</code> branch into the core product, and introduced partial and bi-weekly pay stubs.
-              </p>
-            </article>
-
-            <!-- Project 4 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-              <div class="flex items-center justify-between">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-gold/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Ruby · Testing</span>
-                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">04</span>
-              </div>
-              <h3 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">CI Pipeline Optimization</h3>
-              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                Introduced <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">parallel_tests</code> for horizontal CI scaling across simultaneous processes, cutting pipeline execution time significantly on every cycle.
-              </p>
-            </article>
-
-            <!-- Project 5 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-              <div class="flex items-center justify-between">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-peach/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Performance · Ruby</span>
-                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">05</span>
-              </div>
-              <h3 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Performance Profiler</h3>
-              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                On-demand tool to identify and isolate payroll bottlenecks using <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">memory_profiler</code> and <code class="rounded bg-cream-200 px-1 py-0.5 font-mono text-xs dark:bg-white/10">stackprof</code>. Built after critical regressions proved invisible to existing monitoring.
-              </p>
-            </article>
-
-            <!-- Project 6 -->
-            <article class="flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-              <div class="flex items-center justify-between">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100">Rails · PostgreSQL</span>
-                <span class="font-mono text-xs text-cream-600 dark:text-cream-500">06</span>
-              </div>
-              <h3 class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight">Large-Scale Data Migration</h3>
-              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                Led creation of ~2.4 million production records as part of a critical data migration. Incremental, reversible, monitored process — zero downtime, zero incidents.
-              </p>
-            </article>
           </div>
         </section>
-        <!-- END Projects -->
-
-        <!-- Education -->
-        <section id="education" class="border-b border-cream-300 py-20 dark:border-white/10">
-          <div class="grid gap-12 lg:grid-cols-12">
-            <div class="lg:col-span-4">
-              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">04 · Education</span>
-              <h2 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">Foundation.</h2>
-              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                Computer Engineering in Venezuela, where learning meant finishing projects — not just starting them.
-              </p>
-            </div>
-
-            <ul class="space-y-3 lg:col-span-8">
-              <li class="rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-                <div class="flex flex-wrap items-baseline justify-between gap-3">
-                  <h3 class="text-[1.375rem] font-normal leading-snug tracking-tight">Ingeniería en Informática</h3>
-                  <span class="font-mono text-xs text-cream-600 dark:text-cream-500">2011 – 2016</span>
-                </div>
-                <p class="mt-1 text-sm font-medium text-brand-500">Instituto Universitario Tecnológico Dr. Federico Rivero Palacios</p>
-                <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500">Caracas, Venezuela 🇻🇪</p>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <!-- END Education -->
-
-        <!-- Contact -->
-        <section id="contact" class="py-20">
-          <div class="grid gap-12 lg:grid-cols-12">
-            <div class="lg:col-span-4">
-              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">05 · Contact</span>
-              <h2 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">Let's build something complex together.</h2>
-              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
-                Open to new opportunities. Usually reply within a day.
-              </p>
-              <a href="mailto:ezeram94@gmail.com" class="mt-6 inline-flex h-10 items-center gap-2 rounded-md bg-brand-500 px-5 text-sm font-medium text-white hover:bg-brand-600">
-                ezeram94@gmail.com
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4">
-                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-
-            <div class="lg:col-span-8">
-              <!-- Contact details -->
-              <dl class="grid grid-cols-1 divide-y divide-cream-300 rounded-xl border border-cream-300 bg-white sm:grid-cols-2 sm:divide-y-0 sm:divide-x dark:divide-white/10 dark:border-white/10 dark:bg-white/5">
-                <div class="p-6">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Location</dt>
-                  <dd class="mt-2 font-medium">Santiago, Chile 🇻🇪→🇨🇱</dd>
-                </div>
-                <div class="p-6">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Languages</dt>
-                  <dd class="mt-2 font-medium">Español (native) · English (advanced)</dd>
-                </div>
-                <div class="border-t border-cream-300 p-6 dark:border-white/10">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Email</dt>
-                  <dd class="mt-2">
-                    <a href="mailto:ezeram94@gmail.com" class="font-mono text-sm text-cream-900 underline decoration-cream-400 underline-offset-4 hover:decoration-cream-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white">
-                      ezeram94@gmail.com
-                    </a>
-                  </dd>
-                </div>
-                <div class="border-t border-cream-300 p-6 dark:border-white/10">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Interests</dt>
-                  <dd class="mt-2 font-medium">Climbing · Gaming · Coffee</dd>
-                </div>
-              </dl>
-
-              <!-- Social links -->
-              <ul class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <li>
-                  <a href="https://www.linkedin.com/in/ezequiel-amador-ramirez-garcia/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
-                    <div>
-                      <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">LinkedIn</span>
-                      <p class="mt-1 text-sm font-medium">Professional profile</p>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-cream-600 dark:text-cream-500">
-                      <path d="M7 7h10v10" /><path d="M7 17 17 7" />
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:ezeram94@gmail.com" class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
-                    <div>
-                      <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500">Email</span>
-                      <p class="mt-1 text-sm font-medium">ezeram94@gmail.com</p>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-cream-600 dark:text-cream-500">
-                      <path d="M7 7h10v10" /><path d="M7 17 17 7" />
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <!-- END Social links -->
-            </div>
-          </div>
-        </section>
-        <!-- END Contact -->
+        <!-- END Quick Nav -->
       </main>
 
       <!-- Footer -->
       <footer class="border-t border-cream-300 dark:border-white/10">
-        <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-3 px-5 py-8 text-sm text-cream-700 sm:flex-row sm:items-center lg:px-10 dark:text-cream-500">
+        <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-cream-700 sm:flex-row sm:items-center sm:justify-between lg:px-10 dark:text-cream-500">
           <p>Resume &copy; <script>document.write(new Date().getFullYear());</script> · Ezequiel Amador</p>
+          <nav class="flex flex-wrap gap-5">
+            <a href="/en/about/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">About</a>
+            <a href="/en/experience/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">Experience</a>
+            <a href="/en/projects/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">Projects</a>
+            <a href="/en/contact/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">Contact</a>
+          </nav>
           <a href="/es/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">🇪🇸 Ver en Español</a>
         </div>
       </footer>
       <!-- END Footer -->
     </div>
-    <!-- END Page Container -->
   </body>
 </html>
