@@ -1,0 +1,32 @@
+<div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:px-10">
+  <a href="/" class="inline-flex items-baseline gap-1 font-medium tracking-tight">ezequiel.</a>
+
+  <div class="flex items-center gap-2 sm:gap-5">
+    <nav class="hidden items-center gap-6 md:flex">
+      <a href="/" :class="nc('/')" x-text="$store.i18n.t('nav.home')">Home</a>
+      <a href="/about/" :class="nc('/about/')" x-text="$store.i18n.t('nav.about')">About</a>
+      <a href="/experience/" :class="nc('/experience/')" x-text="$store.i18n.t('nav.experience')">Experience</a>
+      <a href="/projects/" :class="nc('/projects/')" x-text="$store.i18n.t('nav.projects')">Projects</a>
+      <a href="/education/" :class="nc('/education/')" x-text="$store.i18n.t('nav.education')">Education</a>
+      <a href="/contact/" :class="nc('/contact/')" x-text="$store.i18n.t('nav.contact')">Contact</a>
+      <a href="/roadmap/" :class="nc('/roadmap/')" x-text="$store.i18n.t('nav.roadmap')">Roadmap</a>
+    </nav>
+
+    <button x-on:click="$store.i18n.set($store.i18n.lang === 'en' ? 'es' : 'en')" x-text="$store.i18n.t('nav.lang_toggle')" type="button" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">🇪🇸 ES</button>
+
+    <button x-on:click="toggleDarkMode()" type="button" class="inline-flex size-9 items-center justify-center rounded-md text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white" aria-label="Toggle theme">
+      <svg x-show="!darkMode" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5">
+        <circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" />
+      </svg>
+      <svg x-show="darkMode" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-5">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+      </svg>
+    </button>
+
+    <a :href="$store.i18n.t('nav.cv_path')" class="inline-flex h-11 items-center gap-2 rounded-md bg-cream-900 px-5 text-sm font-medium text-cream-100 hover:bg-cream-800 dark:bg-white dark:text-cream-950 dark:hover:bg-white/90">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
+      <span class="hidden sm:inline" x-text="$store.i18n.t('nav.download_cv')">Download CV</span>
+      <span class="sm:hidden" x-text="$store.i18n.t('nav.cv_short')">CV</span>
+    </a>
+  </div>
+</div>
