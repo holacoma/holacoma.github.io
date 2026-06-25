@@ -54,59 +54,6 @@
       #swup { transition: opacity 0.3s ease; }
       html.is-animating #swup { opacity: 0; }
     </style>
-
-    <!-- Roadmap canvas styles, scoped to .rm-scope -->
-    <style>
-      .rm-scope {
-        --bg: #0f1117;
-        --bg2: #1a1d27;
-        --bg3: #22263a;
-        --border: #2e3250;
-        --border-hover: #4a5080;
-        --text: #e2e4f0;
-        --text-muted: #7a80a0;
-        --text-dim: #3a4060;
-        --accent: #f59e0b;
-        --accent-dim: rgba(245,158,11,.15);
-        --line: #2e3250;
-        --todo: #334;
-        --todo-border: #445;
-        --todo-text: #556;
-        background: var(--bg);
-        color: var(--text);
-        font-size: 14px;
-      }
-      .rm-scope .rm-canvas {
-        padding: 40px 32px 80px;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-      .rm-scope .root-wrap { display: flex; justify-content: center; margin-bottom: 0; }
-      .rm-scope .root-node { background: var(--accent); color: #1a0a00; font-weight: 700; font-size: 15px; padding: 12px 40px; border-radius: 8px; position: relative; }
-      .rm-scope .root-node::after { content:''; position:absolute; bottom:-32px; left:50%; transform:translateX(-50%); width:2px; height:32px; background:var(--line); }
-      .rm-scope .section { margin-top: 32px; }
-      .rm-scope .section-connector { display: flex; justify-content: center; position: relative; height: 32px; }
-      .rm-scope .section-connector::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:2px; height:100%; background:var(--line); }
-      .rm-scope .section-title { font-size: 20px; font-weight: 700; color: var(--text); margin: 8px 0 20px; text-align: center; }
-      .rm-scope .group-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-      .rm-scope .group-box { border: 1px solid var(--border); border-radius: 8px; padding: 14px 14px 16px; min-width: 200px; flex: 1; max-width: 280px; }
-      .rm-scope .group-box-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); text-align: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-      .rm-scope .node { background: var(--accent-dim); border: 1px solid rgba(245,158,11,.3); border-radius: 6px; padding: 8px 12px; margin-bottom: 6px; }
-      .rm-scope .node:last-child { margin-bottom: 0; }
-      .rm-scope .node-title { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
-      .rm-scope .node-body { font-size: 11px; color: var(--text-muted); line-height: 1.6; white-space: pre-wrap; }
-      .rm-scope .node-body a { color: var(--accent); word-break: break-all; display: inline-block; margin-top: 4px; font-size: 10px; }
-      .rm-scope .node-todo { background: var(--todo); border: 1px dashed var(--todo-border); border-radius: 6px; padding: 8px 12px; margin-bottom: 6px; }
-      .rm-scope .node-todo:last-child { margin-bottom: 0; }
-      .rm-scope .node-todo-title { font-size: 12px; font-weight: 500; color: var(--todo-text); }
-      .rm-scope .node-todo-label { font-size: 10px; color: var(--todo-border); margin-top: 2px; }
-      .rm-scope .section-pending { margin-top: 40px; border: 1px dashed var(--border); border-radius: 10px; padding: 20px; text-align: center; }
-      .rm-scope .section-pending-title { font-size: 16px; font-weight: 700; color: var(--text-dim); margin-bottom: 6px; }
-      .rm-scope .section-pending-sub { font-size: 12px; color: var(--todo-border); }
-      .rm-scope .vline { width: 2px; height: 24px; background: var(--line); margin: 0 auto; }
-      .rm-scope .rm-footer { border-top: 1px solid var(--border); padding: 14px 28px; font-size: 11px; color: var(--text-dim); text-align: center; }
-      .rm-scope .rm-footer a { color: var(--accent); text-decoration: none; }
-    </style>
   </head>
   <body>
     <div
@@ -135,13 +82,12 @@
       </header>
       <!-- END Top Nav -->
 
-      <main id="swup">
+      <main id="swup" class="mx-auto max-w-6xl px-5 lg:px-10">
+
         <!-- Page header -->
-        <div class="mx-auto max-w-6xl px-5 py-10 lg:px-10">
+        <section class="border-b border-cream-300 py-12 dark:border-white/10">
           <a href="/roadmap/" class="inline-flex items-center gap-1.5 text-sm text-cream-600 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4">
-              <path d="M19 12H5" /><path d="m12 19-7-7 7-7" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M19 12H5" /><path d="m12 19-7-7 7-7" /></svg>
             Roadmap
           </a>
           <div class="mt-4 flex flex-wrap items-center gap-3">
@@ -152,370 +98,409 @@
           <p class="mt-3 max-w-xl text-sm/relaxed text-cream-600 dark:text-cream-500">
             Mapeado a 2 años como EM liderando el equipo de Nómina Colombia en Buk. Cada nodo refleja lo que realmente hice. Los nodos en gris son áreas pendientes de documentar.
           </p>
-        </div>
+        </section>
 
-        <!-- Roadmap canvas — dark island -->
-        <div class="rm-scope overflow-x-auto">
-          <div class="rm-canvas">
+        <!-- Roadmap tree -->
+        <div class="py-12">
 
-            <!-- ROOT -->
-            <div class="root-wrap"><div class="root-node">What is Engineering Management?</div></div>
-
-            <!-- TECHNICAL LEADERSHIP -->
-            <div class="section">
-              <div class="section-connector"></div>
-              <div class="section-title">Technical Leadership</div>
-              <div class="group-row">
-
-                <div class="group-box">
-                  <div class="group-box-title">Quality and Process</div>
-
-                  <div class="node">
-                    <div class="node-title">System Monitoring &amp; Performance</div>
-                    <div class="node-body">Sentry y Grafana con dashboards personalizados. Para profiling usábamos flamegraphs, stackprof y memory_profiler — lo que nos permitió reducir un job crítico de 2.5h a 15 minutos.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">CI/CD Implementation</div>
-                    <div class="node-body">GitLab primero, luego AWS con Jenkins y Grafana. Implementé parallel_tests para escalar el pipeline horizontalmente: de ~30 min a ~5 min. Después se creó una guild para mantenerlo.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Development / Release Workflow</div>
-                    <div class="node-body">Push a rama de producción dispara deploy automático. Equipo de DevOps dedicado, pero el proceso era rutinario y predecible. Feature flags + Strong Migrations + fases de rollout claras.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Testing Strategies</div>
-                    <div class="node-body">Pirámide de tests con foco en integración. TDD durante muchos años. Regla del equipo: funcionalidad nueva o bug siempre tiene un test. Sin excepciones.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Technical Standards Setting</div>
-                    <div class="node-body">Se establecen al inicio — ponerlos después es mucho más caro. Diataxis para documentarlos. Cops y linters para forzarlos automáticamente en el codebase.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Security Best Practices</div>
-                    <div class="node-body">Datos sensibles de RRHH: permisos protegidos por middleware, testeados rigurosamente. Cops para evitar código peligroso. IAs escaneando PRs en busca de vulnerabilidades.</div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Incident Management</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-                </div>
-
-                <div class="group-box">
-                  <div class="group-box-title">Technical Strategy</div>
-
-                  <div class="node">
-                    <div class="node-title">Technical Roadmapping</div>
-                    <div class="node-body">Trabajado en Miro con línea de tiempo y features. La lógica: problemas que queremos que dejen de ser problemas, o donde el dolor principal quede un 90% resuelto.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Architectural Decision-Making</div>
-                    <div class="node-body">Uso MADR. Lo importante es el orden: 1. Contexto, 2. Motivadores, 3. Opciones reales (no las que nunca vamos a tomar), 4. Consecuencias de cada decisión.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Build vs Buy Evaluation</div>
-                    <div class="node-body">¿Vale la pena hacer un asado en casa? Sí. ¿Una hamburguesa de McDonald's? No. Si buscás algo altamente personalizable, construilo. Si otra compañía lleva años perfeccionándolo, compralo. Esta conversación va al inicio de cada proyecto.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Technical Risk Assessment</div>
-                    <div class="node-body">Apartado específico para reportar riesgos técnicos. Cada riesgo levantado debía ser validado por otro integrante senior — la validación cruzada es clave.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Scaling Infrastructure</div>
-                    <div class="node-body">Siempre diseñar para escalar horizontalmente, no verticalmente. Tuvimos escalado dinámico pero resultó muy caro — lo acotamos. Aprendizaje: la solución inteligente a veces cuesta más de lo que ahorra.</div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Legacy System Retirement</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-                </div>
-
-                <div class="group-box">
-                  <div class="group-box-title">Foundational Knowledge</div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Software Engineering Background</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">System Design and Architecture</div>
-                    <div class="node-body">Primero entender el problema, después buscar el patrón. Si no conozco la solución voy a roadmap.sh/system-design. Mi experiencia principal: construcción de APIs.
-<a href="https://roadmap.sh/system-design" target="_blank">roadmap.sh/system-design</a></div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Technical Debt and Management</div>
-                    <div class="node-body">Hay que tener una definición clara antes de poder localizarla y priorizarla. Para identificar patrones de código mal hecho uso los code smells de Refactoring Guru.
-<a href="https://refactoring.guru/refactoring/smells" target="_blank">refactoring.guru → Code Smells</a></div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Code Review Best Practices</div>
-                    <div class="node-body">Lo más importante: readability. ¿Si leo esto en un año, entenderé qué pasa? Checklist: Funcionalidad, Arquitectura, Complejidad, Tests, Convenciones de nombres, Documentación. Estado draft → primera tanda → funcionalidad y rendimiento → arquitectura.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Technical Documentation</div>
-                    <div class="node-body">Uso Diataxis: tutoriales, how-to guides, reference y explanation. Separar por propósito evita que todo quede mezclado en un documento que no sirve bien para nada.
-<a href="https://diataxis.fr" target="_blank">diataxis.fr</a></div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- PEOPLE MANAGEMENT -->
-            <div class="section">
-              <div class="vline"></div>
-              <div class="section-title">People Management</div>
-              <div class="group-row">
-
-                <div class="group-box">
-                  <div class="group-box-title">Team Development</div>
-
-                  <div class="node">
-                    <div class="node-title">Hiring and Recruitment</div>
-                    <div class="node-body">2 entrevistas: fit cultural y técnica. Fit cultural: preguntas en 3 secciones (cultura, personalidad, habilidades). Tomo notas de características fuertes y red flags. Técnica: kata 5 o 6 de Codewars. Con IA se evita IDEs con agentes.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Team Structure and Design</div>
-                    <div class="node-body">1 senior por cada 2 juniors para que el sistema no colapse. Especialización distribuida: cada persona profundiza en lo que le interesa, pero con sesiones para compartir ese conocimiento — el conocimiento no puede quedar estancado.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Performance Evaluations</div>
-                    <div class="node-body">Indicadores: PRs, code reviews, líneas de código, iniciativas y misiones. Cada 6 meses vs expectativa del rol. Gráfica de habilidades para visualizar áreas de expansión.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Career Development Planning</div>
-                    <div class="node-body">Template de Atlassian. Ubico a la persona en uno de 4 cuadrantes y enfoco el plan en ese eje para el período.
-<a href="https://www.atlassian.com/software/confluence/templates/career-development-plan" target="_blank">Atlassian → Career Development Plan</a></div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Mentoring and Coaching</div>
-                    <div class="node-body">Reuniones semanales con un objetivo. La persona lleva su propia bitácora. Dinámica: programar juntos, concluir, investigar y contrastar. El foco está en que la persona aprenda a resolver, no en darle la respuesta.</div>
-                  </div>
-                </div>
-
-                <div class="group-box">
-                  <div class="group-box-title">Leadership Skills</div>
-
-                  <div class="node">
-                    <div class="node-title">Delegation</div>
-                    <div class="node-body">Hay que conocer al equipo para armar una matriz de capacidades. Las personas asignan sus propias fechas. Seguimiento en 1:1 con notas. Si hay atasco, entro a guiar.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Conflict Resolution</div>
-                    <div class="node-body">Modelo Thomas-Kilmann: 5 modos (competir, colaborar, comprometerse, evitar, acomodar). Buen framework para elegir el modo según el contexto.
-<a href="https://en.wikipedia.org/wiki/Thomas%E2%80%93Kilmann_Conflict_Mode_Instrument" target="_blank">Wikipedia → Thomas–Kilmann</a></div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Feedback Delivery</div>
-                    <div class="node-body">Feedback sandwich: positivo → crítica constructiva → positivo. Simple y efectivo para que el mensaje llegue sin que la persona se cierre defensivamente.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Team Motivation</div>
-                    <div class="node-body">Team building y cercanía. Actividades regulares elegidas por el equipo, no impuestas. La motivación no se fuerza — se cultiva creando las condiciones.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Trust / Influence Building</div>
-                    <div class="node-body">La confianza es una estrategia de cooperación. El dilema del prisionero iterado lo demuestra: la reciprocidad sostenida gana. La confianza no se pide, se gana actuando consistentemente.
-<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/sres.2766" target="_blank">Wiley → Trust &amp; Prisoner's Dilemma</a></div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Emotional Intelligence</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-                </div>
-
-                <div class="group-box">
-                  <div class="group-box-title">Communication</div>
-
-                  <div class="node">
-                    <div class="node-title">One-on-One Meetings</div>
-                    <div class="node-body">Formato: Temas a conversar / Acuerdos pasados / Nuevos acuerdos. Cada acuerdo tiene responsable y expectativa para la próxima reunión. Siempre cerrar en nota positiva.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Team Meetings</div>
-                    <div class="node-body">Rituales: dailys, sprint reviews, planning y presentaciones. Cada ceremonia tiene un propósito distinto — no son intercambiables. Mezclarlas hace que ninguna cumpla bien su función.</div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Status Reporting</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Stakeholder Management</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Cross-functional Collaboration</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- PROJECT MANAGEMENT -->
-            <div class="section">
-              <div class="vline"></div>
-              <div class="section-title">Project Management</div>
-              <div class="group-row">
-
-                <div class="group-box">
-                  <div class="group-box-title">Execution</div>
-
-                  <div class="node">
-                    <div class="node-title">Agile methodologies</div>
-                    <div class="node-body">Sprints de una semana. La cadencia corta mantiene el ritmo y hace que los problemas salgan rápido a la superficie.</div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Project Tracking</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Milestone Management</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Scope Management</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Timeline Estimation</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-                </div>
-
-                <div class="group-box">
-                  <div class="group-box-title">Project Planning</div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Resource Allocation</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Sprint Planning</div>
-                    <div class="node-body">Partimos del backlog priorizado y elegimos lo que podemos terminar. Preferible entregar poco a quedar atrapados con tarjetas grandes. Si no cabe, se divide — no se estira el sprint.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Release Management</div>
-                    <div class="node-body">Feature flags para activación sin deploys adicionales. Strong Migrations para cambios seguros en DB. Fases de rollout claras — nunca todo o nada.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Risk Management</div>
-                    <div class="node-body">Primero identificar qué tipos de riesgo son posibles dado el dominio. En remuneraciones: pagar mal. Con eso claro, múltiples validaciones de seniors antes de cualquier cambio crítico.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Dependency management</div>
-                    <div class="node-body">Identificar la dependencia exacta, asignar un responsable de seguimiento. El approach por defecto es resolverlo nosotros — somos los más interesados en que avance.</div>
-                  </div>
-                </div>
-
-                <div class="group-box">
-                  <div class="group-box-title">Measurement</div>
-
-                  <div class="node">
-                    <div class="node-title">KPI Definition</div>
-                    <div class="node-body">En remuneraciones: liquidaciones en producción. En Outputs: archivos generados y empresas con uso activo. Métricas que conectan trabajo técnico con valor real para el cliente.</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Velocity Tracking</div>
-                    <div class="node-body">Lo importante no es el número — es la predecibilidad. Si prometés X y entregás X sprint tras sprint, la confianza con stakeholders se construye sola.
-<a href="https://www.atlassian.com/agile/project-management/velocity-scrum" target="_blank">Atlassian → Velocity in Scrum</a></div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Quality Metrics</div>
-                    <div class="node-body">Cobertura de tests, tipado estático (Sorbet / TypeScript), migraciones fallidas, N+1 en producción, tests lentos. Cada indicador apunta a una dimensión distinta — ninguno solo cuenta la historia completa.</div>
-                  </div>
-
-                  <div class="node-todo">
-                    <div class="node-todo-title">Team Health Metrics</div>
-                    <div class="node-todo-label">pendiente</div>
-                  </div>
-
-                  <div class="node">
-                    <div class="node-title">Project Postmortems</div>
-                    <div class="node-body">Teníamos una plantilla personalizada para RCAs. En remuneraciones: plata afectada, registros incorrectos, empresas impactadas. La severidad objetiva y no discutible.</div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- PENDING SECTIONS -->
-            <div class="vline" style="height:40px;margin-top:8px"></div>
-
-            <div class="group-row" style="margin-top:0">
-              <div class="section-pending">
-                <div class="section-pending-title">Business Acumen</div>
-                <div class="section-pending-sub">Strategic Thinking · Financial Management · Organizational Awareness</div>
-              </div>
-              <div class="section-pending">
-                <div class="section-pending-title">Culture Building</div>
-                <div class="section-pending-sub">Team Culture · Engineering Culture</div>
-              </div>
-              <div class="section-pending">
-                <div class="section-pending-title">Crisis Management</div>
-                <div class="section-pending-sub">Team Support · Risk Mitigation · Incident Response</div>
-              </div>
-            </div>
-            <div class="group-row" style="margin-top:16px">
-              <div class="section-pending">
-                <div class="section-pending-title">Stakeholder Management</div>
-                <div class="section-pending-sub">Documentation · Partner Management · Customer Relations</div>
-              </div>
-              <div class="section-pending">
-                <div class="section-pending-title">Knowledge Management</div>
-                <div class="section-pending-sub">Executive Communication · Knowledge Transfer</div>
-              </div>
-              <div class="section-pending">
-                <div class="section-pending-title">Change Management</div>
-                <div class="section-pending-sub">Technical Change · Organizational Change · Team Change</div>
-              </div>
-            </div>
-
-            <!-- Canvas footer -->
-            <div class="rm-footer" style="margin-top:48px">
-              Basado en <a href="https://roadmap.sh/engineering-manager" target="_blank">roadmap.sh/engineering-manager</a> &nbsp;·&nbsp; <a href="/" target="_self">holacoma.github.io</a>
-            </div>
-
+          <!-- Root -->
+          <div class="flex justify-center">
+            <span class="rounded-lg bg-brand-500 px-6 py-2.5 text-sm font-semibold text-white">What is Engineering Management?</span>
           </div>
+
+          <!-- ── TECHNICAL LEADERSHIP ── -->
+          <div class="mt-0">
+            <div class="mx-auto w-px h-8 bg-cream-300 dark:bg-white/10"></div>
+            <h2 class="text-center text-base font-semibold tracking-tight text-cream-800 dark:text-cream-200 mb-5">Technical Leadership</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+              <!-- Quality and Process -->
+              <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="mb-4 border-b border-cream-200 pb-3 text-[11px] font-semibold uppercase tracking-[0.06em] text-cream-500 dark:border-white/10 dark:text-cream-600">Quality and Process</h3>
+                <div class="space-y-2">
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">System Monitoring &amp; Performance</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Sentry y Grafana con dashboards personalizados. Para profiling usábamos flamegraphs, stackprof y memory_profiler — lo que nos permitió reducir un job crítico de 2.5h a 15 minutos.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">CI/CD Implementation</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">GitLab primero, luego AWS con Jenkins y Grafana. Implementé parallel_tests para escalar el pipeline horizontalmente: de ~30 min a ~5 min. Después se creó una guild para mantenerlo.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Development / Release Workflow</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Push a rama de producción dispara deploy automático. Equipo de DevOps dedicado, pero el proceso era rutinario y predecible. Feature flags + Strong Migrations + fases de rollout claras.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Testing Strategies</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Pirámide de tests con foco en integración. TDD durante muchos años. Regla del equipo: funcionalidad nueva o bug siempre tiene un test. Sin excepciones.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Technical Standards Setting</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Se establecen al inicio — ponerlos después es mucho más caro. Diataxis para documentarlos. Cops y linters para forzarlos automáticamente en el codebase.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Security Best Practices</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Datos sensibles de RRHH: permisos protegidos por middleware, testeados rigurosamente. Cops para evitar código peligroso. IAs escaneando PRs en busca de vulnerabilidades.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Incident Management</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Technical Strategy -->
+              <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="mb-4 border-b border-cream-200 pb-3 text-[11px] font-semibold uppercase tracking-[0.06em] text-cream-500 dark:border-white/10 dark:text-cream-600">Technical Strategy</h3>
+                <div class="space-y-2">
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Technical Roadmapping</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Trabajado en Miro con línea de tiempo y features. La lógica: problemas que queremos que dejen de ser problemas, o donde el dolor principal quede un 90% resuelto.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Architectural Decision-Making</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Uso MADR. Lo importante es el orden: 1. Contexto, 2. Motivadores, 3. Opciones reales (no las que nunca vamos a tomar), 4. Consecuencias de cada decisión.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Build vs Buy Evaluation</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">¿Vale la pena hacer un asado en casa? Sí. ¿Una hamburguesa de McDonald's? No. Si buscás algo altamente personalizable, construilo. Si otra compañía lleva años perfeccionándolo, compralo.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Technical Risk Assessment</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Apartado específico para reportar riesgos técnicos. Cada riesgo levantado debía ser validado por otro integrante senior — la validación cruzada es clave.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Scaling Infrastructure</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Siempre diseñar para escalar horizontalmente, no verticalmente. Tuvimos escalado dinámico pero resultó muy caro — lo acotamos. La solución inteligente a veces cuesta más de lo que ahorra.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Legacy System Retirement</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Foundational Knowledge -->
+              <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="mb-4 border-b border-cream-200 pb-3 text-[11px] font-semibold uppercase tracking-[0.06em] text-cream-500 dark:border-white/10 dark:text-cream-600">Foundational Knowledge</h3>
+                <div class="space-y-2">
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Software Engineering Background</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">System Design and Architecture</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Primero entender el problema, después buscar el patrón. Mi experiencia principal: construcción de APIs.</p>
+                    <a href="https://roadmap.sh/system-design" target="_blank" class="mt-1.5 block text-[10px] text-brand-500 hover:text-brand-600 dark:text-brand-400 underline underline-offset-2 break-all">roadmap.sh/system-design</a>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Technical Debt and Management</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Hay que tener una definición clara antes de poder localizarla y priorizarla. Para identificar patrones uso los code smells de Refactoring Guru.</p>
+                    <a href="https://refactoring.guru/refactoring/smells" target="_blank" class="mt-1.5 block text-[10px] text-brand-500 hover:text-brand-600 dark:text-brand-400 underline underline-offset-2 break-all">refactoring.guru → Code Smells</a>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Code Review Best Practices</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Lo más importante: readability. ¿Si leo esto en un año, entenderé qué pasa? Checklist: Funcionalidad, Arquitectura, Complejidad, Tests, Nombres, Documentación.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Technical Documentation</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Uso Diataxis: tutoriales, how-to guides, reference y explanation. Separar por propósito evita que todo quede mezclado en un documento que no sirve bien para nada.</p>
+                    <a href="https://diataxis.fr" target="_blank" class="mt-1.5 block text-[10px] text-brand-500 hover:text-brand-600 dark:text-brand-400 underline underline-offset-2 break-all">diataxis.fr</a>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ── PEOPLE MANAGEMENT ── -->
+          <div class="mt-10">
+            <div class="mx-auto w-px h-8 bg-cream-300 dark:bg-white/10"></div>
+            <h2 class="text-center text-base font-semibold tracking-tight text-cream-800 dark:text-cream-200 mb-5">People Management</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+              <!-- Team Development -->
+              <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="mb-4 border-b border-cream-200 pb-3 text-[11px] font-semibold uppercase tracking-[0.06em] text-cream-500 dark:border-white/10 dark:text-cream-600">Team Development</h3>
+                <div class="space-y-2">
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Hiring and Recruitment</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">2 entrevistas: fit cultural y técnica. Fit cultural: preguntas en 3 secciones (cultura, personalidad, habilidades). Técnica: kata 5 o 6 de Codewars. Con IA se evita IDEs con agentes.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Team Structure and Design</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">1 senior por cada 2 juniors para que el sistema no colapse. Especialización distribuida: cada persona profundiza en lo que le interesa, con sesiones para compartir ese conocimiento.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Performance Evaluations</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Indicadores: PRs, code reviews, líneas de código, iniciativas y misiones. Cada 6 meses vs expectativa del rol. Gráfica de habilidades para visualizar áreas de expansión.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Career Development Planning</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Template de Atlassian. Ubico a la persona en uno de 4 cuadrantes y enfoco el plan en ese eje para el período.</p>
+                    <a href="https://www.atlassian.com/software/confluence/templates/career-development-plan" target="_blank" class="mt-1.5 block text-[10px] text-brand-500 hover:text-brand-600 dark:text-brand-400 underline underline-offset-2 break-all">Atlassian → Career Development Plan</a>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Mentoring and Coaching</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Reuniones semanales con un objetivo. La persona lleva su propia bitácora. Dinámica: programar juntos, concluir, investigar y contrastar. El foco está en que la persona aprenda a resolver.</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Leadership Skills -->
+              <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="mb-4 border-b border-cream-200 pb-3 text-[11px] font-semibold uppercase tracking-[0.06em] text-cream-500 dark:border-white/10 dark:text-cream-600">Leadership Skills</h3>
+                <div class="space-y-2">
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Delegation</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Hay que conocer al equipo para armar una matriz de capacidades. Las personas asignan sus propias fechas. Seguimiento en 1:1 con notas. Si hay atasco, entro a guiar.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Conflict Resolution</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Modelo Thomas-Kilmann: 5 modos (competir, colaborar, comprometerse, evitar, acomodar). Buen framework para elegir el modo según el contexto.</p>
+                    <a href="https://en.wikipedia.org/wiki/Thomas%E2%80%93Kilmann_Conflict_Mode_Instrument" target="_blank" class="mt-1.5 block text-[10px] text-brand-500 hover:text-brand-600 dark:text-brand-400 underline underline-offset-2 break-all">Wikipedia → Thomas–Kilmann</a>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Feedback Delivery</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Feedback sandwich: positivo → crítica constructiva → positivo. Simple y efectivo para que el mensaje llegue sin que la persona se cierre defensivamente.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Team Motivation</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Team building y cercanía. Actividades regulares elegidas por el equipo, no impuestas. La motivación no se fuerza — se cultiva creando las condiciones.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Trust / Influence Building</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">La confianza es una estrategia de cooperación. El dilema del prisionero iterado lo demuestra: la reciprocidad sostenida gana. La confianza no se pide, se gana actuando consistentemente.</p>
+                    <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/sres.2766" target="_blank" class="mt-1.5 block text-[10px] text-brand-500 hover:text-brand-600 dark:text-brand-400 underline underline-offset-2 break-all">Wiley → Trust &amp; Prisoner's Dilemma</a>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Emotional Intelligence</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Communication -->
+              <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="mb-4 border-b border-cream-200 pb-3 text-[11px] font-semibold uppercase tracking-[0.06em] text-cream-500 dark:border-white/10 dark:text-cream-600">Communication</h3>
+                <div class="space-y-2">
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">One-on-One Meetings</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Formato: Temas a conversar / Acuerdos pasados / Nuevos acuerdos. Cada acuerdo tiene responsable y expectativa para la próxima reunión. Siempre cerrar en nota positiva.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Team Meetings</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Rituales: dailys, sprint reviews, planning y presentaciones. Cada ceremonia tiene un propósito distinto — no son intercambiables. Mezclarlas hace que ninguna cumpla bien su función.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Status Reporting</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Stakeholder Management</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Cross-functional Collaboration</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ── PROJECT MANAGEMENT ── -->
+          <div class="mt-10">
+            <div class="mx-auto w-px h-8 bg-cream-300 dark:bg-white/10"></div>
+            <h2 class="text-center text-base font-semibold tracking-tight text-cream-800 dark:text-cream-200 mb-5">Project Management</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+              <!-- Execution -->
+              <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="mb-4 border-b border-cream-200 pb-3 text-[11px] font-semibold uppercase tracking-[0.06em] text-cream-500 dark:border-white/10 dark:text-cream-600">Execution</h3>
+                <div class="space-y-2">
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Agile Methodologies</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Sprints de una semana. La cadencia corta mantiene el ritmo y hace que los problemas salgan rápido a la superficie.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Project Tracking</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Milestone Management</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Scope Management</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Timeline Estimation</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Project Planning -->
+              <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="mb-4 border-b border-cream-200 pb-3 text-[11px] font-semibold uppercase tracking-[0.06em] text-cream-500 dark:border-white/10 dark:text-cream-600">Project Planning</h3>
+                <div class="space-y-2">
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Resource Allocation</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Sprint Planning</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Partimos del backlog priorizado y elegimos lo que podemos terminar. Preferible entregar poco a quedar atrapados con tarjetas grandes. Si no cabe, se divide — no se estira el sprint.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Release Management</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Feature flags para activación sin deploys adicionales. Strong Migrations para cambios seguros en DB. Fases de rollout claras — nunca todo o nada.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Risk Management</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Primero identificar qué tipos de riesgo son posibles dado el dominio. En remuneraciones: pagar mal. Con eso claro, múltiples validaciones de seniors antes de cualquier cambio crítico.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Dependency Management</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Identificar la dependencia exacta, asignar un responsable de seguimiento. El approach por defecto es resolverlo nosotros — somos los más interesados en que avance.</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Measurement -->
+              <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="mb-4 border-b border-cream-200 pb-3 text-[11px] font-semibold uppercase tracking-[0.06em] text-cream-500 dark:border-white/10 dark:text-cream-600">Measurement</h3>
+                <div class="space-y-2">
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">KPI Definition</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">En remuneraciones: liquidaciones en producción. En Outputs: archivos generados y empresas con uso activo. Métricas que conectan trabajo técnico con valor real para el cliente.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Velocity Tracking</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Lo importante no es el número — es la predecibilidad. Si prometés X y entregás X sprint tras sprint, la confianza con stakeholders se construye sola.</p>
+                    <a href="https://www.atlassian.com/agile/project-management/velocity-scrum" target="_blank" class="mt-1.5 block text-[10px] text-brand-500 hover:text-brand-600 dark:text-brand-400 underline underline-offset-2 break-all">Atlassian → Velocity in Scrum</a>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Quality Metrics</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Cobertura de tests, tipado estático (Sorbet / TypeScript), migraciones fallidas, N+1 en producción, tests lentos. Cada indicador apunta a una dimensión distinta.</p>
+                  </div>
+
+                  <div class="rounded-lg border border-dashed border-cream-200 p-3 dark:border-white/10">
+                    <p class="text-xs font-medium text-cream-400 dark:text-cream-700">Team Health Metrics</p>
+                    <p class="mt-0.5 text-[10px] text-cream-300 dark:text-cream-800">pendiente</p>
+                  </div>
+
+                  <div class="rounded-lg border border-cream-200 bg-cream-50 p-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs font-semibold text-cream-900 dark:text-cream-100">Project Postmortems</p>
+                    <p class="mt-1 text-[11px] leading-relaxed text-cream-600 dark:text-cream-500">Teníamos una plantilla personalizada para RCAs. En remuneraciones: plata afectada, registros incorrectos, empresas impactadas. La severidad objetiva y no discutible.</p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ── PENDING SECTIONS ── -->
+          <div class="mt-10">
+            <div class="mx-auto w-px h-8 bg-cream-300 dark:bg-white/10"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="rounded-xl border border-dashed border-cream-300 p-5 text-center dark:border-white/10">
+                <p class="text-sm font-semibold text-cream-400 dark:text-cream-700">Business Acumen</p>
+                <p class="mt-1 text-[11px] text-cream-300 dark:text-cream-800">Strategic Thinking · Financial Management · Organizational Awareness</p>
+              </div>
+              <div class="rounded-xl border border-dashed border-cream-300 p-5 text-center dark:border-white/10">
+                <p class="text-sm font-semibold text-cream-400 dark:text-cream-700">Culture Building</p>
+                <p class="mt-1 text-[11px] text-cream-300 dark:text-cream-800">Team Culture · Engineering Culture</p>
+              </div>
+              <div class="rounded-xl border border-dashed border-cream-300 p-5 text-center dark:border-white/10">
+                <p class="text-sm font-semibold text-cream-400 dark:text-cream-700">Crisis Management</p>
+                <p class="mt-1 text-[11px] text-cream-300 dark:text-cream-800">Team Support · Risk Mitigation · Incident Response</p>
+              </div>
+              <div class="rounded-xl border border-dashed border-cream-300 p-5 text-center dark:border-white/10">
+                <p class="text-sm font-semibold text-cream-400 dark:text-cream-700">Stakeholder Management</p>
+                <p class="mt-1 text-[11px] text-cream-300 dark:text-cream-800">Documentation · Partner Management · Customer Relations</p>
+              </div>
+              <div class="rounded-xl border border-dashed border-cream-300 p-5 text-center dark:border-white/10">
+                <p class="text-sm font-semibold text-cream-400 dark:text-cream-700">Knowledge Management</p>
+                <p class="mt-1 text-[11px] text-cream-300 dark:text-cream-800">Executive Communication · Knowledge Transfer</p>
+              </div>
+              <div class="rounded-xl border border-dashed border-cream-300 p-5 text-center dark:border-white/10">
+                <p class="text-sm font-semibold text-cream-400 dark:text-cream-700">Change Management</p>
+                <p class="mt-1 text-[11px] text-cream-300 dark:text-cream-800">Technical Change · Organizational Change · Team Change</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attribution -->
+          <p class="mt-10 text-center text-[11px] text-cream-400 dark:text-cream-700">
+            Basado en <a href="https://roadmap.sh/engineering-manager" target="_blank" class="underline underline-offset-2 hover:text-cream-600 dark:hover:text-cream-500">roadmap.sh/engineering-manager</a>
+          </p>
+
         </div>
-        <!-- END Roadmap canvas -->
+        <!-- END Roadmap tree -->
+
       </main>
 
       <!-- Footer -->
