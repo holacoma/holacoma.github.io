@@ -54,6 +54,27 @@
       #swup { transition: opacity 0.3s ease; }
       html.is-animating #swup { opacity: 0; }
     </style>
+    <style>
+      @keyframes card-in {
+        from { opacity: 0; transform: translateY(18px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      .card-reveal { opacity: 0; }
+      .card-reveal.is-visible {
+        animation: card-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-delay: var(--card-delay, 0ms);
+      }
+      .project-grid > a {
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      }
+      .project-grid > a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+      }
+      .dark .project-grid > a:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      }
+    </style>
   </head>
   <body>
     <div
@@ -91,7 +112,7 @@
             </div>
           </div>
 
-          <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <div class="project-grid mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
             <!-- Project 01 -->
             <a href="/projects/p01/" class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 transition-colors hover:border-brand-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700">
@@ -246,7 +267,28 @@
         const container = document.querySelector('#swup');
         if (container) Alpine.initTree(container);
         if (window.Alpine) Alpine.store('i18n').syncPath();
+        initCardAnimations();
       });
+
+      function initCardAnimations() {
+        const cards = document.querySelectorAll('.project-grid > a');
+        if (!cards.length) return;
+        const cols = window.innerWidth >= 1280 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              observer.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.05 });
+        cards.forEach((card, i) => {
+          card.classList.add('card-reveal');
+          card.style.setProperty('--card-delay', `${(i % cols) * 70}ms`);
+          observer.observe(card);
+        });
+      }
+      initCardAnimations();
     </script>
   </body>
 </html>
