@@ -36,6 +36,7 @@
               <a href="/projects/" :class="nc('/projects/')" x-text="$store.i18n.t('nav.projects')">Projects</a>
               <a href="/education/" :class="nc('/education/')" x-text="$store.i18n.t('nav.education')">Education</a>
               <a href="/contact/" :class="nc('/contact/')" x-text="$store.i18n.t('nav.contact')">Contact</a>
+              <a href="/roadmap/" :class="nc('/roadmap/')" x-text="$store.i18n.t('nav.roadmap')">Roadmap</a>
             </nav>
             <button x-on:click="$store.i18n.set($store.i18n.lang === 'en' ? 'es' : 'en')" x-text="$store.i18n.t('nav.lang_toggle')" type="button" class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">🇪🇸 ES</button>
             <button x-on:click="toggleDarkMode()" type="button" class="inline-flex size-9 items-center justify-center rounded-md text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white" aria-label="Toggle theme">
@@ -117,6 +118,7 @@
             <a href="/projects/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300" x-text="$store.i18n.t('nav.projects')">Projects</a>
             <a href="/education/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300" x-text="$store.i18n.t('nav.education')">Education</a>
             <a href="/contact/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300" x-text="$store.i18n.t('nav.contact')">Contact</a>
+            <a href="/roadmap/" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300" x-text="$store.i18n.t('nav.roadmap')">Roadmap</a>
           </nav>
           <button x-on:click="$store.i18n.set($store.i18n.lang === 'en' ? 'es' : 'en')" x-text="$store.i18n.t('footer.lang_switch')" type="button" class="font-medium text-cream-900 hover:text-cream-700 dark:text-white dark:hover:text-cream-300">🇪🇸 Ver en Español</button>
         </div>

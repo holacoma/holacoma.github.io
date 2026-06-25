@@ -19,6 +19,9 @@
       '/projects/p07/': 'Blockdoze — Ezequiel Amador',
       '/projects/p08/': 'Pixel Race — Ezequiel Amador',
       '/projects/p09/': 'Chechelab — Ezequiel Amador',
+      '/roadmap/': 'Roadmap — Ezequiel Amador',
+      '/roadmap/engineering-manager/': 'Engineering Manager Roadmap — Ezequiel Amador',
+      '/roadmap/software-architect/': 'Software Architect Roadmap — Ezequiel Amador',
     },
     es: {
       '/': 'Ezequiel Amador, Staff Engineer',
@@ -36,6 +39,9 @@
       '/projects/p07/': 'Blockdoze — Ezequiel Amador',
       '/projects/p08/': 'Pixel Race — Ezequiel Amador',
       '/projects/p09/': 'Chechelab — Ezequiel Amador',
+      '/roadmap/': 'Roadmap — Ezequiel Amador',
+      '/roadmap/engineering-manager/': 'Engineering Manager Roadmap — Ezequiel Amador',
+      '/roadmap/software-architect/': 'Software Architect Roadmap — Ezequiel Amador',
     },
   };
 

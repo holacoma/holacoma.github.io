@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Contact — Ezequiel Amador</title>
-    <meta name="description" content="Open to new opportunities. Staff Engineer based in Santiago, Chile. Usually replies within a day." />
+    <title>Software Architect Roadmap — Ezequiel Amador</title>
+    <meta name="description" content="Software Architect roadmap based on roadmap.sh. Work in progress." />
     <meta name="author" content="Ezequiel Amador" />
 
     <link rel="preconnect" href="https://fonts.bunny.net" />
@@ -68,7 +68,9 @@
           }
         },
         nc(p) {
-          return Alpine.store('i18n').path === p
+          const path = Alpine.store('i18n').path;
+          const active = p === '/roadmap/' ? path.startsWith('/roadmap/') : path === p;
+          return active
             ? 'text-sm font-semibold text-cream-900 underline underline-offset-4 decoration-brand-500 dark:text-white'
             : 'text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white';
         }
@@ -113,72 +115,35 @@
       <!-- END Top Nav -->
 
       <main id="swup" class="mx-auto max-w-6xl px-5 lg:px-10">
-        <!-- Contact -->
         <section class="py-20">
           <div class="grid gap-12 lg:grid-cols-12">
             <div class="lg:col-span-4">
-              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.section')">Contact</span>
-              <h1 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl" x-text="$store.i18n.t('contact.heading')">Let's build something complex together.</h1>
-              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('contact.description')">
-                Open to new opportunities. Usually reply within a day.
-              </p>
-              <a href="mailto:ezeram94@gmail.com" class="mt-6 inline-flex h-10 items-center gap-2 rounded-md bg-brand-500 px-5 text-sm font-medium text-white hover:bg-brand-600">
-                ezeram94@gmail.com
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+              <a href="/roadmap/" class="inline-flex items-center gap-1.5 text-sm text-cream-600 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4">
+                  <path d="M19 12H5" /><path d="m12 19-7-7 7-7" />
+                </svg>
+                Roadmap
               </a>
+              <div class="mt-4 flex flex-wrap items-center gap-2">
+                <span class="inline-flex items-center rounded-md bg-cream-300 px-2 py-0.5 text-[11px] font-semibold text-cream-600 dark:bg-white/10 dark:text-cream-500">en progreso</span>
+                <span class="font-mono text-xs text-cream-400 dark:text-cream-600">roadmap.sh/software-architect</span>
+              </div>
+              <h1 class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl">Software Architect</h1>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                En construcción. Este roadmap está siendo mapeado a partir de experiencia real en diseño de sistemas, decisiones de arquitectura y evaluación de trade-offs.
+              </p>
             </div>
 
             <div class="lg:col-span-8">
-              <!-- Contact details -->
-              <dl class="grid grid-cols-1 divide-y divide-cream-300 rounded-xl border border-cream-300 bg-white sm:grid-cols-2 sm:divide-y-0 sm:divide-x dark:divide-white/10 dark:border-white/10 dark:bg-white/5">
-                <div class="p-6">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.loc_label')">Location</dt>
-                  <dd class="mt-2 font-medium" x-text="$store.i18n.t('contact.loc_value')">Santiago, Chile 🇻🇪→🇨🇱</dd>
+              <div class="flex h-64 items-center justify-center rounded-xl border border-dashed border-cream-300 dark:border-white/10">
+                <div class="text-center">
+                  <p class="text-sm font-medium text-cream-500 dark:text-cream-600">Próximamente</p>
+                  <p class="mt-1 text-xs text-cream-400 dark:text-cream-700">Basado en roadmap.sh/software-architect</p>
                 </div>
-                <div class="p-6">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.lang_label')">Languages</dt>
-                  <dd class="mt-2 font-medium" x-text="$store.i18n.t('contact.lang_value')">Español (native) · English (advanced)</dd>
-                </div>
-                <div class="border-t border-cream-300 p-6 dark:border-white/10">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.email_label')">Email</dt>
-                  <dd class="mt-2">
-                    <a href="mailto:ezeram94@gmail.com" class="font-mono text-sm text-cream-900 underline decoration-cream-400 underline-offset-4 hover:decoration-cream-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white">
-                      ezeram94@gmail.com
-                    </a>
-                  </dd>
-                </div>
-                <div class="border-t border-cream-300 p-6 dark:border-white/10">
-                  <dt class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.interests_label')">Interests</dt>
-                  <dd class="mt-2 font-medium" x-text="$store.i18n.t('contact.interests_value')">Climbing · Gaming · Coffee</dd>
-                </div>
-              </dl>
-
-              <!-- Social links -->
-              <ul class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <li>
-                  <a href="https://www.linkedin.com/in/ezequiel-amador-ramirez-garcia/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
-                    <div>
-                      <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.linkedin_label')">LinkedIn</span>
-                      <p class="mt-1 text-sm font-medium" x-text="$store.i18n.t('contact.linkedin_profile')">Professional profile</p>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-cream-600 dark:text-cream-500"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:ezeram94@gmail.com" class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
-                    <div>
-                      <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('contact.email_label')">Email</span>
-                      <p class="mt-1 text-sm font-medium">ezeram94@gmail.com</p>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-cream-600 dark:text-cream-500"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
-                  </a>
-                </li>
-              </ul>
-              <!-- END Social links -->
+              </div>
             </div>
           </div>
         </section>
-        <!-- END Contact -->
       </main>
 
       <!-- Footer -->
