@@ -136,6 +136,98 @@
           </div>
         </section>
         <!-- END About -->
+
+        <!-- Currently -->
+        <section class="border-t border-cream-300 py-20 dark:border-white/10">
+          <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('about.currently_section')">Now</span>
+              <h2 class="mt-3 text-2xl font-normal leading-tight tracking-tight md:text-3xl" x-text="$store.i18n.t('about.currently_heading')">What I'm doing right now</h2>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('about.currently_desc')">A snapshot of current reads and where I'm from.</p>
+            </div>
+            <div class="min-w-0 lg:col-span-8">
+              <div class="overflow-hidden rounded-xl border border-cream-300 bg-white dark:border-white/10 dark:bg-white/5">
+                <div class="flex items-center gap-2 border-b border-cream-300 px-4 py-3 dark:border-white/10">
+                  <span class="size-2.5 rounded-full bg-peach"></span>
+                  <span class="size-2.5 rounded-full bg-gold"></span>
+                  <span class="size-2.5 rounded-full bg-mint"></span>
+                  <span class="ml-3 font-mono text-xs text-cream-600 dark:text-cream-500">~/about/ezequiel.rb</span>
+                </div>
+                <pre class="overflow-x-auto px-5 py-5 font-mono text-[13px] leading-relaxed text-cream-900 dark:text-cream-200"><span class="text-cream-600 dark:text-cream-500"># right now</span>
+<span class="text-gold">now</span> = {
+  reading:   [<span class="text-mint">"Atomic Habits"</span>,         <span class="text-cream-600 dark:text-cream-500"># James Clear</span>
+              <span class="text-mint">"Guns, Germs &amp; Steel"</span>,  <span class="text-cream-600 dark:text-cream-500"># Jared Diamond</span>
+              <span class="text-mint">"The Power of Now"</span>],     <span class="text-cream-600 dark:text-cream-500"># Eckhart Tolle</span>
+  languages: { <span class="text-mint">"Spanish"</span> => <span class="text-azure">"native"</span>, <span class="text-mint">"English"</span> => <span class="text-azure">"advanced"</span> },
+}</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- END Currently -->
+
+        <!-- Books -->
+        <section class="border-t border-cream-300 py-20 dark:border-white/10">
+          <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('about.books_section')">Reading</span>
+              <h2 class="mt-3 text-2xl font-normal leading-tight tracking-tight md:text-3xl" x-text="$store.i18n.t('about.books_heading')">Books that shaped how I think</h2>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('about.books_desc')">Not just engineering books. These shaped how I reason about systems, habits, and attention.</p>
+            </div>
+            <div class="min-w-0 lg:col-span-8">
+              <div class="overflow-hidden rounded-xl border border-cream-300 bg-white dark:border-white/10 dark:bg-white/5">
+                <div class="flex items-center gap-2 border-b border-cream-300 px-4 py-3 dark:border-white/10">
+                  <span class="size-2.5 rounded-full bg-peach"></span>
+                  <span class="size-2.5 rounded-full bg-gold"></span>
+                  <span class="size-2.5 rounded-full bg-mint"></span>
+                  <span class="ml-3 font-mono text-xs text-cream-600 dark:text-cream-500">~/about/ezequiel.rb</span>
+                </div>
+                <pre class="overflow-x-auto px-5 py-5 font-mono text-[13px] leading-relaxed text-cream-900 dark:text-cream-200"><span class="text-cream-600 dark:text-cream-500"># books that shaped how I think</span>
+<span class="text-gold">books</span> = [
+  { title:    <span class="text-mint">"<span x-text="$store.i18n.t('about.book1_title')">Atomic Habits</span>"</span>,         author: <span class="text-mint">"James Clear"</span>,
+    takeaway: <span class="text-azure">"<span x-text="$store.i18n.t('about.book1_takeaway')">Build systems, not goals. Small changes compound into identity shifts.</span>"</span> },
+
+  { title:    <span class="text-mint">"<span x-text="$store.i18n.t('about.book2_title')">Guns, Germs &amp; Steel</span>"</span>, author: <span class="text-mint">"Jared Diamond"</span>,
+    takeaway: <span class="text-azure">"<span x-text="$store.i18n.t('about.book2_takeaway')">Geography — not intelligence — shaped civilizations. A macro lens on causality.</span>"</span> },
+
+  { title:    <span class="text-mint">"<span x-text="$store.i18n.t('about.book3_title')">The Power of Now</span>"</span>,    author: <span class="text-mint">"Eckhart Tolle"</span>,
+    takeaway: <span class="text-azure">"<span x-text="$store.i18n.t('about.book3_takeaway')">Presence over noise. Past is memory, future is projection. Only now is real.</span>"</span> },
+]</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- END Books -->
+
+        <!-- Outside the terminal -->
+        <section class="border-t border-cream-300 py-20 dark:border-white/10">
+          <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500" x-text="$store.i18n.t('about.beyond_section')">Beyond</span>
+              <h2 class="mt-3 text-2xl font-normal leading-tight tracking-tight md:text-3xl" x-text="$store.i18n.t('about.beyond_heading')">Outside the terminal</h2>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('about.beyond_desc')">High-level gaming demands the same precision and pattern recognition as engineering.</p>
+            </div>
+            <div class="min-w-0 lg:col-span-8">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                  <div class="flex items-start justify-between gap-3">
+                    <span class="font-mono text-xs font-medium text-cream-900 dark:text-cream-200" x-text="$store.i18n.t('about.game1_name')">League of Legends</span>
+                    <span class="shrink-0 rounded-full bg-gold/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100" x-text="$store.i18n.t('about.game1_badge')">Master</span>
+                  </div>
+                  <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('about.game1_detail')">Peaked Master rank on the Chilean server — top ~0.5% of players globally.</p>
+                </div>
+                <div class="rounded-xl border border-cream-300 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+                  <div class="flex items-start justify-between gap-3">
+                    <span class="font-mono text-xs font-medium text-cream-900 dark:text-cream-200" x-text="$store.i18n.t('about.game2_name')">Devil Daggers / Hyper Demon</span>
+                    <span class="shrink-0 rounded-full bg-peach/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100" x-text="$store.i18n.t('about.game2_badge')">Competitive</span>
+                  </div>
+                  <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500" x-text="$store.i18n.t('about.game2_detail')">Among the most mechanically demanding survival games ever made. Frame-perfect reflexes, zero margin for error.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- END Outside the terminal -->
       </main>
 
       <!-- Footer -->
